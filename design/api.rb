@@ -9,7 +9,7 @@ Praxis::ApiDefinition.define do
   # Trait that when included will require a Bearer authorization header to be passed in.
   trait :authorized do
     headers do
-      key "Authorization", String, regexp: /^.*Bearer /, required: true
+      key "Authorization", String, regexp: /^.*Bearer /, required: false
     end
   end
 end
