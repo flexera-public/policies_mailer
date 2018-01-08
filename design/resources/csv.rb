@@ -1,6 +1,6 @@
 module V1
   module ApiResources
-    class CSV
+    class CSVAPI
       include Praxis::ResourceDefinition
 
       media_type V1::MediaTypes::Hello
@@ -34,11 +34,12 @@ module V1
 
       action :create do
         routing do
-          post '/'
+          post ''
         end
-        params do
-          attribute :data, String, required: false
+        payload do
+          attribute :data, Attributor::Collection, required: false
         end
+        response :created
       end
     end
   end

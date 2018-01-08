@@ -1,11 +1,12 @@
 require 'tempfile'
-require 'fastercsv'
+require 'csv'
+require 'pry'
 
 module V1
-  class CSV
+  class CSVAPI
     include Praxis::Controller
 
-    implements V1::ApiResources::CSV
+    implements V1::ApiResources::CSVAPI
 
 
     def index(**params)
@@ -24,11 +25,11 @@ module V1
       response
     end
 
-    def create(data:, **other_params)
+    def create()
       file = Tempfile.new
-      FasterCSV.open(file.path, "w") do |csv|
-        csv << data
-      end
+      payload = request.payload.contents
+      data = payload[:data]
+      File.open(file,'w'){ |f| f << data.map(&:to_csv).join }
       response.headers['Content-Type'] = 'application/json'
       response.body = file.path.to_json
       response
