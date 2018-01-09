@@ -41,5 +41,11 @@ module V1
       response.body = { file: File.basename(file.path) }.to_json
       response
     end
+
+    def delete(id:, **other_params)
+      File.delete(File.join(TEMP_FILE_DIR,id)) if File.exist?(File.join(TEMP_FILE_DIR,id))
+      response.headers['Content-Type'] = 'application/json'
+      response
+    end
   end
 end
