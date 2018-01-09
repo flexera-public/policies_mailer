@@ -32,5 +32,14 @@ module V1
       response.body = { file: File.basename(file.path) }.to_json
       response
     end
+
+    def update(id:, **other_params)
+      payload = request.payload.contents
+      data = payload[:data]
+      file = File.open(File.join(TEMP_FILE_DIR,id),'a+'){ |f| f << data.map(&:to_csv).join }
+      response.headers['Content-Type'] = 'application/json'
+      response.body = { file: File.basename(file.path) }.to_json
+      response
+    end
   end
 end

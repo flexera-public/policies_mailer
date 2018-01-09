@@ -41,6 +41,22 @@ module V1
         end
         response :created
       end
+
+      action :update do
+        routing do
+          put '/:id'
+          patch '/:id'
+        end
+
+        params do
+          attribute :id, String, required: true
+        end
+
+        payload do
+          attribute :data, Attributor::Collection, required: false
+        end
+        response :created
+      end
     end
   end
 end
