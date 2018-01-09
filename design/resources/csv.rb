@@ -57,6 +57,17 @@ module V1
         end
         response :created
       end
+
+      action :delete do
+        routing do
+          delete '/:id'
+        end
+
+        params do
+          attribute :id, String, required: true
+        end
+        response :no_content
+      end
     end
   end
 end
