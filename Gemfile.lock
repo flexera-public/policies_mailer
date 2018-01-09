@@ -13,19 +13,29 @@ GEM
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
     diff-lcs (1.3)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
     fastercsv (1.5.5)
     harness (2.0.0)
       statsd-ruby
     hashie (3.5.7)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     macaddr (1.7.1)
       systemu (~> 2.6.2)
+    mailgun-ruby (1.1.8)
+      rest-client (~> 2.0)
     method_source (0.8.2)
     mime (0.4.4)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
     minitest (5.11.1)
     mustermann (0.4.0)
       tool (~> 0.2)
+    netrc (0.11.0)
     praxis (0.21)
       activesupport (>= 3)
       attributor (~> 5.1)
@@ -52,6 +62,10 @@ GEM
     rack (1.6.8)
     rake (12.3.0)
     randexp (0.1.7)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -76,6 +90,9 @@ GEM
     tool (0.2.3)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
     unicode-display_width (1.3.0)
     uuid (2.3.8)
       macaddr (~> 1.0)
@@ -85,6 +102,7 @@ PLATFORMS
 
 DEPENDENCIES
   fastercsv
+  mailgun-ruby (~> 1.1.6)
   praxis
   pry
   rack (~> 1.0)

@@ -24,6 +24,10 @@ end
 
 Praxis::Application.instance.config do
   attribute :temp_file_directory, String, required: true
+  attribute :mailgun_domain, String, required: true
+  attribute :mailgun_api_key, String, required: true
 end
 
 Praxis::Application.instance.config.temp_file_directory = '/tmp'
+Praxis::Application.instance.config.mailgun_domain = ENV['MAILGUN_DOMAIN']
+Praxis::Application.instance.config.mailgun_api_key = ENV['MAILGUN_API_KEY']

@@ -43,7 +43,13 @@ module V1
         end
 
         payload do
-          attribute :data, Attributor::Collection, required: true
+          attribute :to, String, required: true
+          attribute :from, String, required: true
+          attribute :subject, String, required: true
+          attribute :body, String, required: true
+          attribute :attachment, String, required: false
+          attribute :encoding, String, required: false, default: 'text'
+          attribute :delete_attachment, Attributor::Boolean, required: false, default: true
         end
       end
     end
