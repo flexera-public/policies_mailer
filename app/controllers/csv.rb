@@ -1,13 +1,13 @@
 require 'tempfile'
 require 'csv'
-require 'pry'
+require 'securerandom'
 
 module V1
   class CSVAPI
     include Praxis::Controller
 
     implements V1::ApiResources::CSVAPI
-
+    TEMP_FILE_DIR = Praxis::Application.instance.config.temp_file_directory
 
     def index(**params)
       response.headers['Content-Type'] = 'application/json'
@@ -16,22 +16,20 @@ module V1
     end
 
     def show(id:, **other_params)
-      if hello
-        response.body = { id: id, data: hello }
-      else
-        self.response = Praxis::Responses::NotFound.new(body: "Hello word with index #{id} not found in our DB")
-      end
+      file = File.join(TEMP_FILE_DIR, id)
+      arr_of_arrs = CSV.read(file)
       response.headers['Content-Type'] = 'application/json'
+      response.body = arr_of_arrs.to_json
       response
     end
 
     def create()
-      file = Tempfile.new
+      file_id = "#{SecureRandom.uuid}.csv"
       payload = request.payload.contents
       data = payload[:data]
-      File.open(file,'w'){ |f| f << data.map(&:to_csv).join }
+      file = File.open(File.join(TEMP_FILE_DIR,file_id),'w+'){ |f| f << data.map(&:to_csv).join }
       response.headers['Content-Type'] = 'application/json'
-      response.body = file.path.to_json
+      response.body = { file: File.basename(file.path) }.to_json
       response
     end
   end
