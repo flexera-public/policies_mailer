@@ -20,3 +20,10 @@ Praxis::Application.instance.layout do
     map :responses, '**/responses/**/*'
   end
 end
+
+
+Praxis::Application.instance.config do
+  attribute :temp_file_directory, String, required: true
+end
+
+Praxis::Application.instance.config.temp_file_directory = '/tmp'

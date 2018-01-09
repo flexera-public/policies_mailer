@@ -5,6 +5,7 @@ gem 'rack', '~> 1.0'
 gem 'rake'
 gem 'fastercsv'
 gem 'pry'
+gem 'uuid'
 
 group :development, :test do
   gem 'rspec'

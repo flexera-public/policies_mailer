@@ -27,7 +27,7 @@ module V1
           get '/:id'
         end
         params do
-          attribute :id, Integer, required: true, min: 0
+          attribute :id, String, required: true
         end
         response :not_found
       end
