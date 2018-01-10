@@ -37,7 +37,10 @@ module V1
       mb_obj.subject payload[:subject]
       mb_obj.body_text payload[:body] if payload[:encoding] == 'text' || !payload[:encoding]
       mb_obj.boxy_html payload[:body] if payload[:encoding] == 'html'
-      mb_obj.add_attachment File.join(TEMP_FILE_DIR,payload[:attachment]) if payload[:attachment]
+      if payload[:attachment]
+        mb_obj.add_attachment File.join(TEMP_FILE_DIR,payload[:attachment])
+        V1::CSVAPI.delete(payload[:attachment]) if payload[:delete_attachment]
+      end
 
       result = mg_client.send_message(MAILGUN_DOMAIN, mb_obj).to_h!
 
