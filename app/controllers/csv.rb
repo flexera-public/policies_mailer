@@ -8,6 +8,9 @@ module V1
 
     implements V1::ApiResources::CSVAPI
     TEMP_FILE_DIR = Praxis::Application.instance.config.temp_file_directory
+    def self.delete(id)
+      File.delete(File.join(TEMP_FILE_DIR,id)) if File.exist?(File.join(TEMP_FILE_DIR,id))
+    end
 
     def index(**params)
       response.headers['Content-Type'] = 'application/json'
@@ -43,7 +46,7 @@ module V1
     end
 
     def delete(id:, **other_params)
-      File.delete(File.join(TEMP_FILE_DIR,id)) if File.exist?(File.join(TEMP_FILE_DIR,id))
+      self.class.delete(id)
       response.headers['Content-Type'] = 'application/json'
       response
     end
