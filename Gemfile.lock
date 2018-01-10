@@ -59,7 +59,10 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    puma (3.11.0)
     rack (1.6.8)
+    rack-contrib (1.8.0)
+      rack (~> 1.4)
     rake (12.3.0)
     randexp (0.1.7)
     rest-client (2.0.2)
@@ -81,6 +84,7 @@ GEM
     rspec-support (3.7.0)
     sequel (4.49.0)
     slop (3.6.0)
+    stalin (0.2.0)
     statsd-ruby (1.4.0)
     systemu (2.6.5)
     terminal-table (1.8.0)
@@ -105,9 +109,12 @@ DEPENDENCIES
   mailgun-ruby (~> 1.1.6)
   praxis
   pry
+  puma
   rack (~> 1.0)
+  rack-contrib
   rake
   rspec
+  stalin
   uuid
 
 BUNDLED WITH
