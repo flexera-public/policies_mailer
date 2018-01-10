@@ -27,4 +27,3 @@ COPY app $HOME/app
 # This enables us to set the git commit reference SHA in the docker image
 ARG gitref=unknown
 LABEL git.ref=${gitref}
-VOLUME /tmp

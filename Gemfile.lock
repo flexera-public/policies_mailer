@@ -69,6 +69,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    right_support (2.14.2)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -113,6 +114,7 @@ DEPENDENCIES
   rack (~> 1.0)
   rack-contrib
   rake
+  right_support
   rspec
   stalin
   uuid
