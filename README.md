@@ -11,6 +11,7 @@
 # Api
 
 ## /api/csv
+ - Creates, Updates, and Deletes a csv file
 ### Fields
 | Action | Verbs | Fields |
 |------------|-----------|-------------|
@@ -27,6 +28,7 @@ http DELETE http://localhost:8888/api/csv/5dea41ad-b0d6-45a7-8deb-458301a2ff5f.c
 ```
 
 ## /api/mail
+ - Sends email to user via mailgun api with or without attachments
 
 ### Fields
 | Action | Verbs | Fields |
