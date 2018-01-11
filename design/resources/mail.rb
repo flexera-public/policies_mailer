@@ -43,8 +43,8 @@ module V1
         end
 
         payload do
-          attribute :to, String, required: true
-          attribute :from, String, required: true
+          attribute :to, String, required: true, description: 'john.doe@example.com'
+          attribute :from, String, required: true, description: 'mary.doe@example.com'
           attribute :subject, String, required: true
           attribute :body, String, required: true
           attribute :attachment, String, required: false
