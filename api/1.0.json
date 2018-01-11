@@ -1021,7 +1021,7 @@
               },
               "attributes": {
                 "to": {
-                  "description": "email to",
+                  "description": "email to:",
                   "required": true,
                   "example_definition": "john.doe@example.com",
                   "type": {
@@ -1032,16 +1032,18 @@
                   "example": "john.doe@example.com"
                 },
                 "from": {
-                  "description": "mary.doe@example.com",
+                  "description": "email from:",
                   "required": true,
+                  "example_definition": "mary.doe@example.com",
                   "type": {
                     "name": "String",
                     "family": "string",
                     "id": "Attributor-String"
                   },
-                  "example": "Zhitomir"
+                  "example": "mary.doe@example.com"
                 },
                 "subject": {
+                  "description": "email subject",
                   "required": true,
                   "type": {
                     "name": "String",
@@ -1051,6 +1053,7 @@
                   "example": "subnotochordal"
                 },
                 "body": {
+                  "description": "content of the email",
                   "required": true,
                   "type": {
                     "name": "String",
@@ -1060,13 +1063,15 @@
                   "example": "lackeying"
                 },
                 "attachment": {
+                  "description": "file name to be attached",
                   "required": false,
+                  "example_definition": "6901f064-8077-4644-984b-a3ee258f57c3.csv",
                   "type": {
                     "name": "String",
                     "family": "string",
                     "id": "Attributor-String"
                   },
-                  "example": "acquainted"
+                  "example": "6901f064-8077-4644-984b-a3ee258f57c3.csv"
                 },
                 "encoding": {
                   "values": [
@@ -1075,12 +1080,13 @@
                   ],
                   "default": "text",
                   "required": false,
+                  "example_definition": "text",
                   "type": {
                     "name": "String",
                     "family": "string",
                     "id": "Attributor-String"
                   },
-                  "example": "html"
+                  "example": "text"
                 },
                 "delete_attachment": {
                   "default": true,
@@ -1108,11 +1114,11 @@
             "examples": {
               "json": {
                 "content_type": "application/json",
-                "body": "{\n  \"to\": \"john.doe@example.com\",\n  \"from\": \"Zhitomir\",\n  \"subject\": \"subnotochordal\",\n  \"body\": \"lackeying\",\n  \"attachment\": \"acquainted\",\n  \"encoding\": \"html\",\n  \"delete_attachment\": true\n}"
+                "body": "{\n  \"to\": \"john.doe@example.com\",\n  \"from\": \"mary.doe@example.com\",\n  \"subject\": \"subnotochordal\",\n  \"body\": \"lackeying\",\n  \"attachment\": \"6901f064-8077-4644-984b-a3ee258f57c3.csv\",\n  \"encoding\": \"text\",\n  \"delete_attachment\": true\n}"
               },
               "x-www-form-urlencoded": {
                 "content_type": "application/x-www-form-urlencoded",
-                "body": "to=john.doe%40example.com&from=Zhitomir&subject=subnotochordal&body=lackeying&attachment=acquainted&encoding=html&delete_attachment=true"
+                "body": "to=john.doe%40example.com&from=mary.doe%40example.com&subject=subnotochordal&body=lackeying&attachment=6901f064-8077-4644-984b-a3ee258f57c3.csv&encoding=text&delete_attachment=true"
               }
             }
           },
@@ -1227,6 +1233,22 @@
             "id": "Attributor-String"
           },
           "example": "blot"
+        },
+        "message_id": {
+          "type": {
+            "name": "String",
+            "family": "string",
+            "id": "Attributor-String"
+          },
+          "example": "fishwoman"
+        },
+        "message": {
+          "type": {
+            "name": "String",
+            "family": "string",
+            "id": "Attributor-String"
+          },
+          "example": "crevice"
         }
       },
       "requirements": [
@@ -1248,7 +1270,9 @@
       "description": null,
       "display_name": "Mail",
       "example": {
-        "string": "blot"
+        "string": "blot",
+        "message_id": "fishwoman",
+        "message": "crevice"
       }
     },
     "Attributor-Collection": {
@@ -1258,6 +1282,7 @@
       "options": {
       },
       "example": [
+        "An Object",
         "An Object",
         "An Object"
       ],
