@@ -744,6 +744,7 @@
               :id: Attributor-Symbol
           :attributes:
             :to:
+              :description: john.doe@example.com
               :required: true
               :type:
                 :name: String
@@ -751,6 +752,7 @@
                 :id: Attributor-String
               :example: semitrailers
             :from:
+              :description: mary.doe@example.com
               :required: true
               :type:
                 :name: String

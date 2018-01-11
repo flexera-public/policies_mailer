@@ -1021,6 +1021,7 @@
               },
               "attributes": {
                 "to": {
+                  "description": "john.doe@example.com",
                   "required": true,
                   "type": {
                     "name": "String",
@@ -1030,6 +1031,7 @@
                   "example": "semitrailers"
                 },
                 "from": {
+                  "description": "mary.doe@example.com",
                   "required": true,
                   "type": {
                     "name": "String",
