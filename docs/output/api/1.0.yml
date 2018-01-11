@@ -668,8 +668,8 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "message": "zuza",
-                    "message_id": "mistunes"
+                    "message": "<20180111191946.1.50D7896597E97DC2@example.com>",
+                    "message_id": "Queued. Thank you."
                   }
       :urls:
       - :verb: POST
@@ -721,17 +721,19 @@
         :id: Attributor-Symbol
     :attributes:
       :message_id:
+        :example_definition: Queued. Thank you.
         :type:
           :name: String
           :family: string
           :id: Attributor-String
-        :example: fishwoman
+        :example: Queued. Thank you.
       :message:
+        :example_definition: "<20180111191946.1.50D7896597E97DC2@example.com>"
         :type:
           :name: String
           :family: string
           :id: Attributor-String
-        :example: crevice
+        :example: "<20180111191946.1.50D7896597E97DC2@example.com>"
     :requirements: []
     :views:
       :default:
@@ -740,21 +742,20 @@
           :message_id: {}
         :type: :standard
         :example:
-          :message: crevice
-          :message_id: fishwoman
+          :message: "<20180111191946.1.50D7896597E97DC2@example.com>"
+          :message_id: Queued. Thank you.
     :identifier: application/json
     :description: 
     :display_name: Mail
     :example:
-      :message_id: fishwoman
-      :message: crevice
+      :message_id: Queued. Thank you.
+      :message: "<20180111191946.1.50D7896597E97DC2@example.com>"
   Attributor-Collection:
     :name: Collection
     :family: array
     :id: Attributor-Collection
     :options: {}
     :example:
-    - An Object
     - An Object
     - An Object
     :member_attribute:

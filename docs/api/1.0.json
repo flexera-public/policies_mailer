@@ -891,7 +891,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"message\": \"zuza\",\n  \"message_id\": \"mistunes\"\n}"
+                    "body": "{\n  \"message\": \"<20180111191946.1.50D7896597E97DC2@example.com>\",\n  \"message_id\": \"Queued. Thank you.\"\n}"
                   }
                 }
               }
@@ -973,20 +973,22 @@
       },
       "attributes": {
         "message_id": {
+          "example_definition": "Queued. Thank you.",
           "type": {
             "name": "String",
             "family": "string",
             "id": "Attributor-String"
           },
-          "example": "fishwoman"
+          "example": "Queued. Thank you."
         },
         "message": {
+          "example_definition": "<20180111191946.1.50D7896597E97DC2@example.com>",
           "type": {
             "name": "String",
             "family": "string",
             "id": "Attributor-String"
           },
-          "example": "crevice"
+          "example": "<20180111191946.1.50D7896597E97DC2@example.com>"
         }
       },
       "requirements": [
@@ -1002,8 +1004,8 @@
           },
           "type": "standard",
           "example": {
-            "message": "crevice",
-            "message_id": "fishwoman"
+            "message": "<20180111191946.1.50D7896597E97DC2@example.com>",
+            "message_id": "Queued. Thank you."
           }
         }
       },
@@ -1011,8 +1013,8 @@
       "description": null,
       "display_name": "Mail",
       "example": {
-        "message_id": "fishwoman",
-        "message": "crevice"
+        "message_id": "Queued. Thank you.",
+        "message": "<20180111191946.1.50D7896597E97DC2@example.com>"
       }
     },
     "Attributor-Collection": {
@@ -1022,7 +1024,6 @@
       "options": {
       },
       "example": [
-        "An Object",
         "An Object",
         "An Object"
       ],
