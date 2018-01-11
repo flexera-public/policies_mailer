@@ -22,10 +22,36 @@
 
 ### Examples
 
+#### Create
 ```
 http POST http://localhost:8888/api/csv X-Api-Version:1.0 data:=[[1,2,3]]
-http PUT http://localhost:8888/api/csv/5dea41ad-b0d6-45a7-8deb-458301a2ff5f.csv X-Api-Version:1.0 data:=[[4,5,6],[6,7,8]]
-http DELETE http://localhost:8888/api/csv/5dea41ad-b0d6-45a7-8deb-458301a2ff5f.csv
+HTTP/1.1 200 OK
+Content-Length: 51
+Content-Type: application/json
+
+{
+            "file": "6901f064-8077-4644-984b-a3ee258f57c3.csv"
+}
+```
+
+#### Update
+```
+http PUT http://localhost:8888/api/csv/6901f064-8077-4644-984b-a3ee258f57c3.csv X-Api-Version:1.0 data:=[[4,5,6],[6,7,8]]
+HTTP/1.1 200 OK
+Content-Length: 51
+Content-Type: application/json
+
+{
+            "file": "6901f064-8077-4644-984b-a3ee258f57c3.csv"
+}
+```
+
+### Delete
+```
+http DELETE http://localhost:8888/api/csv/6901f064-8077-4644-984b-a3ee258f57c3.csv X-Api-Version:1.0
+HTTP/1.1 200 OK
+Content-Length: 0
+Content-Type: application/json
 ```
 
 ## /api/mail
@@ -39,9 +65,18 @@ http DELETE http://localhost:8888/api/csv/5dea41ad-b0d6-45a7-8deb-458301a2ff5f.c
 
 ### Examples
 
+#### Create
 ```
 http POST http://localhost:8888/api/mail X-Api-Version:1.0 to=john.doe@example.com from=policies@rightscale.com subject='Policy Report' \
-                                                           body='Attached is your policy report' attachment='5dea41ad-b0d6-45a7-8deb-458301a2ff5f.csv'
+                                                           body='Attached is your policy report' attachment='6901f064-8077-4644-984b-a3ee258f57c3.csv'
+HTTP/1.1 200 OK
+Content-Length: 117
+Content-Type: application/json
+
+{
+            "message": "Queued. Thank you.", 
+                "message_id": "<20180111191946.1.50D7896597E97DC2@services.rightscale.com>"
+}
 ```
 
 ## RCL Example
