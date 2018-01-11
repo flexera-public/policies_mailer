@@ -668,6 +668,8 @@
                 :content_type: application/json
                 :body: |-
                   {
+                    "message": "zuza",
+                    "message_id": "mistunes"
                   }
       :urls:
       - :verb: POST
@@ -733,10 +735,6 @@
     :requirements: []
     :views:
       :default:
-        :attributes: {}
-        :type: :standard
-        :example: {}
-      :create:
         :attributes:
           :message: {}
           :message_id: {}
