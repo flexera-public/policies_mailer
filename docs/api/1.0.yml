@@ -547,188 +547,8 @@
           :id: Attributor-Symbol
     :actions:
     - :description: 
-      :name: :index
-      :metadata: {}
-      :headers:
-        :required: true
-        :options:
-          :allow_extra: false
-          :case_insensitive_load: true
-          :reference: V1::MediaTypes::Mail
-        :type:
-          :name: Hash
-          :family: hash
-          :id: 
-          :key:
-            :type:
-              :name: String
-              :family: string
-              :id: Attributor-String
-          :attributes:
-            Authorization:
-              :required: false
-              :options:
-                :regexp: *1
-              :type:
-                :name: String
-                :family: string
-                :id: Attributor-String
-              :example: 'Failed to generate example for /^.*Bearer / : Sorry, ".*"
-                is too vague, try setting a range: ".{0,3}"'
-          :requirements: []
-        :example: {}
-      :responses:
-        :ok:
-          :description: Standard response for successful HTTP requests.
-          :status: 200
-          :headers: {}
-          :payload:
-            :name: V1::MediaTypes::Mail
-            :family: hash
-            :id: V1-MediaTypes-Mail
-            :key:
-              :type:
-                :name: Symbol
-                :family: string
-                :id: Attributor-Symbol
-            :examples:
-              json:
-                :content_type: application/json
-                :body: |-
-                  {
-                    "string": "nitpicker"
-                  }
-      :traits:
-      - :authorized
-      :urls:
-      - :verb: GET
-        :path: "/api/mail"
-        :version: '1.0'
-        :example: "/api/mail"
-    - :description: 
-      :name: :show
-      :metadata: {}
-      :headers:
-        :required: true
-        :options:
-          :allow_extra: false
-          :case_insensitive_load: true
-          :reference: V1::MediaTypes::Mail
-        :type:
-          :name: Hash
-          :family: hash
-          :id: 
-          :key:
-            :type:
-              :name: String
-              :family: string
-              :id: Attributor-String
-          :attributes:
-            Authorization:
-              :required: false
-              :options:
-                :regexp: *1
-              :type:
-                :name: String
-                :family: string
-                :id: Attributor-String
-              :example: 'Failed to generate example for /^.*Bearer / : Sorry, ".*"
-                is too vague, try setting a range: ".{0,3}"'
-          :requirements: []
-        :example: {}
-      :params:
-        :required: true
-        :options:
-          :reference: V1::MediaTypes::Mail
-        :type:
-          :name: Struct
-          :family: hash
-          :id: 
-          :key:
-            :type:
-              :name: Symbol
-              :family: string
-              :id: Attributor-Symbol
-          :attributes:
-            :id:
-              :required: true
-              :options:
-                :min: 0
-              :type:
-                :name: Integer
-                :family: numeric
-                :id: Attributor-Integer
-              :example: 107
-              :source: url
-          :requirements:
-          - :type: :all
-            :attributes:
-            - :id
-        :example: ''
-      :responses:
-        :ok:
-          :description: Standard response for successful HTTP requests.
-          :status: 200
-          :headers: {}
-          :payload:
-            :name: V1::MediaTypes::Mail
-            :family: hash
-            :id: V1-MediaTypes-Mail
-            :key:
-              :type:
-                :name: Symbol
-                :family: string
-                :id: Attributor-Symbol
-            :examples:
-              json:
-                :content_type: application/json
-                :body: |-
-                  {
-                    "string": "nitpicker"
-                  }
-        :not_found:
-          :description: The requested resource could not be found but may be available
-            again in the future.
-          :status: 404
-          :headers: {}
-      :traits:
-      - :authorized
-      :urls:
-      - :verb: GET
-        :path: "/api/mail/:id"
-        :version: '1.0'
-        :example: "/api/mail/107"
-    - :description: 
       :name: :create
       :metadata: {}
-      :headers:
-        :required: true
-        :options:
-          :allow_extra: false
-          :case_insensitive_load: true
-          :reference: V1::MediaTypes::Mail
-        :type:
-          :name: Hash
-          :family: hash
-          :id: 
-          :key:
-            :type:
-              :name: String
-              :family: string
-              :id: Attributor-String
-          :attributes:
-            Authorization:
-              :required: false
-              :options:
-                :regexp: *1
-              :type:
-                :name: String
-                :family: string
-                :id: Attributor-String
-              :example: 'Failed to generate example for /^.*Bearer / : Sorry, ".*"
-                is too vague, try setting a range: ".{0,3}"'
-          :requirements: []
-        :example: {}
       :payload:
         :required: true
         :options:
@@ -848,10 +668,7 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "string": "nitpicker"
                   }
-      :traits:
-      - :authorized
       :urls:
       - :verb: POST
         :path: "/api/mail"
@@ -860,8 +677,7 @@
     :name: V1::ApiResources::Mail
     :display_name: Mail
     :metadata: {}
-    :traits:
-    - :authorized
+    :traits: []
 :schemas:
   V1-MediaTypes-Hello:
     :name: V1::MediaTypes::Hello
@@ -902,12 +718,6 @@
         :family: string
         :id: Attributor-Symbol
     :attributes:
-      :string:
-        :type:
-          :name: String
-          :family: string
-          :id: Attributor-String
-        :example: blot
       :message_id:
         :type:
           :name: String
@@ -923,16 +733,21 @@
     :requirements: []
     :views:
       :default:
+        :attributes: {}
+        :type: :standard
+        :example: {}
+      :create:
         :attributes:
-          :string: {}
+          :message: {}
+          :message_id: {}
         :type: :standard
         :example:
-          :string: blot
+          :message: crevice
+          :message_id: fishwoman
     :identifier: application/json
     :description: 
     :display_name: Mail
     :example:
-      :string: blot
       :message_id: fishwoman
       :message: crevice
   Attributor-Collection:

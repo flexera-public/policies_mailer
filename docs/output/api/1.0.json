@@ -749,259 +749,8 @@
       "actions": [
         {
           "description": null,
-          "name": "index",
-          "metadata": {
-          },
-          "headers": {
-            "required": true,
-            "options": {
-              "allow_extra": false,
-              "case_insensitive_load": true,
-              "reference": "V1::MediaTypes::Mail"
-            },
-            "type": {
-              "name": "Hash",
-              "family": "hash",
-              "id": null,
-              "key": {
-                "type": {
-                  "name": "String",
-                  "family": "string",
-                  "id": "Attributor-String"
-                }
-              },
-              "attributes": {
-                "Authorization": {
-                  "required": false,
-                  "options": {
-                    "regexp": "(?-mix:^.*Bearer )"
-                  },
-                  "type": {
-                    "name": "String",
-                    "family": "string",
-                    "id": "Attributor-String"
-                  },
-                  "example": "Failed to generate example for /^.*Bearer / : Sorry, \".*\" is too vague, try setting a range: \".{0,3}\""
-                }
-              },
-              "requirements": [
-
-              ]
-            },
-            "example": {
-            }
-          },
-          "responses": {
-            "ok": {
-              "description": "Standard response for successful HTTP requests.",
-              "status": 200,
-              "headers": {
-              },
-              "payload": {
-                "name": "V1::MediaTypes::Mail",
-                "family": "hash",
-                "id": "V1-MediaTypes-Mail",
-                "key": {
-                  "type": {
-                    "name": "Symbol",
-                    "family": "string",
-                    "id": "Attributor-Symbol"
-                  }
-                },
-                "examples": {
-                  "json": {
-                    "content_type": "application/json",
-                    "body": "{\n  \"string\": \"nitpicker\"\n}"
-                  }
-                }
-              }
-            }
-          },
-          "traits": [
-            "authorized"
-          ],
-          "urls": [
-            {
-              "verb": "GET",
-              "path": "/api/mail",
-              "version": "1.0",
-              "example": "/api/mail"
-            }
-          ]
-        },
-        {
-          "description": null,
-          "name": "show",
-          "metadata": {
-          },
-          "headers": {
-            "required": true,
-            "options": {
-              "allow_extra": false,
-              "case_insensitive_load": true,
-              "reference": "V1::MediaTypes::Mail"
-            },
-            "type": {
-              "name": "Hash",
-              "family": "hash",
-              "id": null,
-              "key": {
-                "type": {
-                  "name": "String",
-                  "family": "string",
-                  "id": "Attributor-String"
-                }
-              },
-              "attributes": {
-                "Authorization": {
-                  "required": false,
-                  "options": {
-                    "regexp": "(?-mix:^.*Bearer )"
-                  },
-                  "type": {
-                    "name": "String",
-                    "family": "string",
-                    "id": "Attributor-String"
-                  },
-                  "example": "Failed to generate example for /^.*Bearer / : Sorry, \".*\" is too vague, try setting a range: \".{0,3}\""
-                }
-              },
-              "requirements": [
-
-              ]
-            },
-            "example": {
-            }
-          },
-          "params": {
-            "required": true,
-            "options": {
-              "reference": "V1::MediaTypes::Mail"
-            },
-            "type": {
-              "name": "Struct",
-              "family": "hash",
-              "id": null,
-              "key": {
-                "type": {
-                  "name": "Symbol",
-                  "family": "string",
-                  "id": "Attributor-Symbol"
-                }
-              },
-              "attributes": {
-                "id": {
-                  "required": true,
-                  "options": {
-                    "min": 0
-                  },
-                  "type": {
-                    "name": "Integer",
-                    "family": "numeric",
-                    "id": "Attributor-Integer"
-                  },
-                  "example": 107,
-                  "source": "url"
-                }
-              },
-              "requirements": [
-                {
-                  "type": "all",
-                  "attributes": [
-                    "id"
-                  ]
-                }
-              ]
-            },
-            "example": ""
-          },
-          "responses": {
-            "ok": {
-              "description": "Standard response for successful HTTP requests.",
-              "status": 200,
-              "headers": {
-              },
-              "payload": {
-                "name": "V1::MediaTypes::Mail",
-                "family": "hash",
-                "id": "V1-MediaTypes-Mail",
-                "key": {
-                  "type": {
-                    "name": "Symbol",
-                    "family": "string",
-                    "id": "Attributor-Symbol"
-                  }
-                },
-                "examples": {
-                  "json": {
-                    "content_type": "application/json",
-                    "body": "{\n  \"string\": \"nitpicker\"\n}"
-                  }
-                }
-              }
-            },
-            "not_found": {
-              "description": "The requested resource could not be found but may be available again in the future.",
-              "status": 404,
-              "headers": {
-              }
-            }
-          },
-          "traits": [
-            "authorized"
-          ],
-          "urls": [
-            {
-              "verb": "GET",
-              "path": "/api/mail/:id",
-              "version": "1.0",
-              "example": "/api/mail/107"
-            }
-          ]
-        },
-        {
-          "description": null,
           "name": "create",
           "metadata": {
-          },
-          "headers": {
-            "required": true,
-            "options": {
-              "allow_extra": false,
-              "case_insensitive_load": true,
-              "reference": "V1::MediaTypes::Mail"
-            },
-            "type": {
-              "name": "Hash",
-              "family": "hash",
-              "id": null,
-              "key": {
-                "type": {
-                  "name": "String",
-                  "family": "string",
-                  "id": "Attributor-String"
-                }
-              },
-              "attributes": {
-                "Authorization": {
-                  "required": false,
-                  "options": {
-                    "regexp": "(?-mix:^.*Bearer )"
-                  },
-                  "type": {
-                    "name": "String",
-                    "family": "string",
-                    "id": "Attributor-String"
-                  },
-                  "example": "Failed to generate example for /^.*Bearer / : Sorry, \".*\" is too vague, try setting a range: \".{0,3}\""
-                }
-              },
-              "requirements": [
-
-              ]
-            },
-            "example": {
-            }
           },
           "payload": {
             "required": true,
@@ -1142,15 +891,12 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"string\": \"nitpicker\"\n}"
+                    "body": "{\n}"
                   }
                 }
               }
             }
           },
-          "traits": [
-            "authorized"
-          ],
           "urls": [
             {
               "verb": "POST",
@@ -1166,7 +912,7 @@
       "metadata": {
       },
       "traits": [
-        "authorized"
+
       ]
     }
   },
@@ -1226,14 +972,6 @@
         }
       },
       "attributes": {
-        "string": {
-          "type": {
-            "name": "String",
-            "family": "string",
-            "id": "Attributor-String"
-          },
-          "example": "blot"
-        },
         "message_id": {
           "type": {
             "name": "String",
@@ -1257,12 +995,22 @@
       "views": {
         "default": {
           "attributes": {
-            "string": {
+          },
+          "type": "standard",
+          "example": {
+          }
+        },
+        "create": {
+          "attributes": {
+            "message": {
+            },
+            "message_id": {
             }
           },
           "type": "standard",
           "example": {
-            "string": "blot"
+            "message": "crevice",
+            "message_id": "fishwoman"
           }
         }
       },
@@ -1270,7 +1018,6 @@
       "description": null,
       "display_name": "Mail",
       "example": {
-        "string": "blot",
         "message_id": "fishwoman",
         "message": "crevice"
       }
