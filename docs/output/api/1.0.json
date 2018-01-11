@@ -891,7 +891,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n}"
+                    "body": "{\n  \"message\": \"zuza\",\n  \"message_id\": \"mistunes\"\n}"
                   }
                 }
               }
@@ -994,13 +994,6 @@
       ],
       "views": {
         "default": {
-          "attributes": {
-          },
-          "type": "standard",
-          "example": {
-          }
-        },
-        "create": {
           "attributes": {
             "message": {
             },

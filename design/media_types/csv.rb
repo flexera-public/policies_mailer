@@ -5,12 +5,11 @@
         identifier 'application/json'
 
         attributes do
-          attribute :string, String
-          attribute :data, Attributor::Collection
+          attribute :file, String
         end
 
         view :default do
-          attribute :string
+          attribute :file, example: '6901f064-8077-4644-984b-a3ee258f57c3.csv'
         end
       end
     end
