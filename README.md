@@ -151,3 +151,5 @@ end
 | 1.0     | /api/mail      | POST   | V1::ApiResources::Mail   | create | V1::Mail#create   |      | yes     |         |
 +---------+----------------+--------+--------------------------+--------+-------------------+------+---------+---------+
 ```
+
+## Additional API Docs: https://rs-services.github.io/policies_mailer/
