@@ -1,5 +1,6 @@
 # Main entry point - DO NOT MODIFY THIS FILE
 ENV['RACK_ENV'] ||= 'development'
+#require 'right_support/log'
 
 Bundler.require(:default, ENV['RACK_ENV'])
 
@@ -31,3 +32,4 @@ end
 Praxis::Application.instance.config.temp_file_directory = '/tmp'
 Praxis::Application.instance.config.mailgun_domain = ENV['MAILGUN_DOMAIN']
 Praxis::Application.instance.config.mailgun_api_key = ENV['MAILGUN_API_KEY']
+#Praxis::Application.instance.logger = RightSupport::Log::SystemLogger.new('policies_mailer',facility: 'local0')

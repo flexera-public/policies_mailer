@@ -1,0 +1,25 @@
+# Git repository metadata
+.git
+
+# Temp files for various editors and UIs
+.DS_Store
+*.swp
+.idea
+
+# General Ruby application cruft: logs, local gem installs, etc
+.env*
+.bundle
+log
+vendor/bundle
+
+# Test collateral
+fixtures
+spec
+.rspec
+
+# Build artifacts
+api_docs
+coverage
+measurement
+tmp
+
