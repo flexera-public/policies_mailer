@@ -1021,14 +1021,15 @@
               },
               "attributes": {
                 "to": {
-                  "description": "john.doe@example.com",
+                  "description": "email to",
                   "required": true,
+                  "example_definition": "john.doe@example.com",
                   "type": {
                     "name": "String",
                     "family": "string",
                     "id": "Attributor-String"
                   },
-                  "example": "semitrailers"
+                  "example": "john.doe@example.com"
                 },
                 "from": {
                   "description": "mary.doe@example.com",
@@ -1068,6 +1069,10 @@
                   "example": "acquainted"
                 },
                 "encoding": {
+                  "values": [
+                    "text",
+                    "html"
+                  ],
                   "default": "text",
                   "required": false,
                   "type": {
@@ -1075,7 +1080,7 @@
                     "family": "string",
                     "id": "Attributor-String"
                   },
-                  "example": "preilium"
+                  "example": "html"
                 },
                 "delete_attachment": {
                   "default": true,
@@ -1103,11 +1108,11 @@
             "examples": {
               "json": {
                 "content_type": "application/json",
-                "body": "{\n  \"to\": \"semitrailers\",\n  \"from\": \"Zhitomir\",\n  \"subject\": \"subnotochordal\",\n  \"body\": \"lackeying\",\n  \"attachment\": \"acquainted\",\n  \"encoding\": \"preilium\",\n  \"delete_attachment\": true\n}"
+                "body": "{\n  \"to\": \"john.doe@example.com\",\n  \"from\": \"Zhitomir\",\n  \"subject\": \"subnotochordal\",\n  \"body\": \"lackeying\",\n  \"attachment\": \"acquainted\",\n  \"encoding\": \"html\",\n  \"delete_attachment\": true\n}"
               },
               "x-www-form-urlencoded": {
                 "content_type": "application/x-www-form-urlencoded",
-                "body": "to=semitrailers&from=Zhitomir&subject=subnotochordal&body=lackeying&attachment=acquainted&encoding=preilium&delete_attachment=true"
+                "body": "to=john.doe%40example.com&from=Zhitomir&subject=subnotochordal&body=lackeying&attachment=acquainted&encoding=html&delete_attachment=true"
               }
             }
           },
