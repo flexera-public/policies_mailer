@@ -1,0 +1,1286 @@
+{
+  "info": {
+    "schema_version": "1.0",
+    "base_path": "",
+    "version_with": [
+      "header",
+      "params"
+    ],
+    "consumes": [
+      "json",
+      "x-www-form-urlencoded"
+    ],
+    "produces": [
+      "json"
+    ]
+  },
+  "resources": {
+    "V1-ApiResources-CSVAPI": {
+      "description": null,
+      "media_type": {
+        "name": "V1::MediaTypes::Hello",
+        "family": "hash",
+        "id": "V1-MediaTypes-Hello",
+        "key": {
+          "type": {
+            "name": "Symbol",
+            "family": "string",
+            "id": "Attributor-Symbol"
+          }
+        }
+      },
+      "actions": [
+        {
+          "description": null,
+          "name": "index",
+          "metadata": {
+          },
+          "responses": {
+            "ok": {
+              "description": "Standard response for successful HTTP requests.",
+              "status": 200,
+              "headers": {
+              },
+              "payload": {
+                "name": "V1::MediaTypes::Hello",
+                "family": "hash",
+                "id": "V1-MediaTypes-Hello",
+                "key": {
+                  "type": {
+                    "name": "Symbol",
+                    "family": "string",
+                    "id": "Attributor-Symbol"
+                  }
+                },
+                "examples": {
+                  "json": {
+                    "content_type": "application/json",
+                    "body": "{\n  \"string\": \"peroxidate\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "urls": [
+            {
+              "verb": "GET",
+              "path": "/api/csv",
+              "version": "1.0",
+              "example": "/api/csv"
+            }
+          ]
+        },
+        {
+          "description": null,
+          "name": "show",
+          "metadata": {
+          },
+          "params": {
+            "required": true,
+            "options": {
+              "reference": "V1::MediaTypes::Hello"
+            },
+            "type": {
+              "name": "Struct",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "Symbol",
+                  "family": "string",
+                  "id": "Attributor-Symbol"
+                }
+              },
+              "attributes": {
+                "id": {
+                  "required": true,
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "Aramus",
+                  "source": "url"
+                }
+              },
+              "requirements": [
+                {
+                  "type": "all",
+                  "attributes": [
+                    "id"
+                  ]
+                }
+              ]
+            },
+            "example": ""
+          },
+          "responses": {
+            "ok": {
+              "description": "Standard response for successful HTTP requests.",
+              "status": 200,
+              "headers": {
+              },
+              "payload": {
+                "name": "V1::MediaTypes::Hello",
+                "family": "hash",
+                "id": "V1-MediaTypes-Hello",
+                "key": {
+                  "type": {
+                    "name": "Symbol",
+                    "family": "string",
+                    "id": "Attributor-Symbol"
+                  }
+                },
+                "examples": {
+                  "json": {
+                    "content_type": "application/json",
+                    "body": "{\n  \"string\": \"peroxidate\"\n}"
+                  }
+                }
+              }
+            },
+            "not_found": {
+              "description": "The requested resource could not be found but may be available again in the future.",
+              "status": 404,
+              "headers": {
+              }
+            }
+          },
+          "urls": [
+            {
+              "verb": "GET",
+              "path": "/api/csv/:id",
+              "version": "1.0",
+              "example": "/api/csv/Aramus"
+            }
+          ]
+        },
+        {
+          "description": null,
+          "name": "create",
+          "metadata": {
+          },
+          "payload": {
+            "required": true,
+            "options": {
+              "reference": "V1::MediaTypes::Hello"
+            },
+            "type": {
+              "name": "Struct",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "Symbol",
+                  "family": "string",
+                  "id": "Attributor-Symbol"
+                }
+              },
+              "attributes": {
+                "data": {
+                  "required": false,
+                  "type": {
+                    "name": "Collection",
+                    "family": "array",
+                    "id": "Attributor-Collection",
+                    "options": {
+                    },
+                    "member_attribute": {
+                      "type": {
+                        "name": "Object",
+                        "family": "any",
+                        "id": "Attributor-Object"
+                      },
+                      "example": "An Object"
+                    }
+                  },
+                  "example": [
+                    "An Object",
+                    "An Object"
+                  ]
+                }
+              },
+              "requirements": [
+
+              ]
+            },
+            "examples": {
+              "json": {
+                "content_type": "application/json",
+                "body": "{\n  \"data\": [\n    \"An Object\",\n    \"An Object\"\n  ]\n}"
+              },
+              "x-www-form-urlencoded": {
+                "content_type": "application/x-www-form-urlencoded",
+                "body": "data=An+Object&data=An+Object"
+              }
+            }
+          },
+          "responses": {
+            "ok": {
+              "description": "Standard response for successful HTTP requests.",
+              "status": 200,
+              "headers": {
+              },
+              "payload": {
+                "name": "V1::MediaTypes::Hello",
+                "family": "hash",
+                "id": "V1-MediaTypes-Hello",
+                "key": {
+                  "type": {
+                    "name": "Symbol",
+                    "family": "string",
+                    "id": "Attributor-Symbol"
+                  }
+                },
+                "examples": {
+                  "json": {
+                    "content_type": "application/json",
+                    "body": "{\n  \"string\": \"peroxidate\"\n}"
+                  }
+                }
+              }
+            },
+            "created": {
+              "description": "The request has been fulfilled and resulted in a new resource being created.",
+              "status": 201,
+              "headers": {
+              }
+            }
+          },
+          "urls": [
+            {
+              "verb": "POST",
+              "path": "/api/csv",
+              "version": "1.0",
+              "example": "/api/csv"
+            }
+          ]
+        },
+        {
+          "description": null,
+          "name": "update",
+          "metadata": {
+          },
+          "params": {
+            "required": true,
+            "options": {
+              "reference": "V1::MediaTypes::Hello"
+            },
+            "type": {
+              "name": "Struct",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "Symbol",
+                  "family": "string",
+                  "id": "Attributor-Symbol"
+                }
+              },
+              "attributes": {
+                "id": {
+                  "required": true,
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "Aramus",
+                  "source": "url"
+                }
+              },
+              "requirements": [
+                {
+                  "type": "all",
+                  "attributes": [
+                    "id"
+                  ]
+                }
+              ]
+            },
+            "example": ""
+          },
+          "payload": {
+            "required": true,
+            "options": {
+              "reference": "V1::MediaTypes::Hello"
+            },
+            "type": {
+              "name": "Struct",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "Symbol",
+                  "family": "string",
+                  "id": "Attributor-Symbol"
+                }
+              },
+              "attributes": {
+                "data": {
+                  "required": false,
+                  "type": {
+                    "name": "Collection",
+                    "family": "array",
+                    "id": "Attributor-Collection",
+                    "options": {
+                    },
+                    "member_attribute": {
+                      "type": {
+                        "name": "Object",
+                        "family": "any",
+                        "id": "Attributor-Object"
+                      },
+                      "example": "An Object"
+                    }
+                  },
+                  "example": [
+                    "An Object",
+                    "An Object"
+                  ]
+                }
+              },
+              "requirements": [
+
+              ]
+            },
+            "examples": {
+              "json": {
+                "content_type": "application/json",
+                "body": "{\n  \"data\": [\n    \"An Object\",\n    \"An Object\"\n  ]\n}"
+              },
+              "x-www-form-urlencoded": {
+                "content_type": "application/x-www-form-urlencoded",
+                "body": "data=An+Object&data=An+Object"
+              }
+            }
+          },
+          "responses": {
+            "ok": {
+              "description": "Standard response for successful HTTP requests.",
+              "status": 200,
+              "headers": {
+              },
+              "payload": {
+                "name": "V1::MediaTypes::Hello",
+                "family": "hash",
+                "id": "V1-MediaTypes-Hello",
+                "key": {
+                  "type": {
+                    "name": "Symbol",
+                    "family": "string",
+                    "id": "Attributor-Symbol"
+                  }
+                },
+                "examples": {
+                  "json": {
+                    "content_type": "application/json",
+                    "body": "{\n  \"string\": \"peroxidate\"\n}"
+                  }
+                }
+              }
+            },
+            "created": {
+              "description": "The request has been fulfilled and resulted in a new resource being created.",
+              "status": 201,
+              "headers": {
+              }
+            }
+          },
+          "urls": [
+            {
+              "verb": "PUT",
+              "path": "/api/csv/:id",
+              "version": "1.0",
+              "example": "/api/csv/Aramus"
+            },
+            {
+              "verb": "PATCH",
+              "path": "/api/csv/:id",
+              "version": "1.0",
+              "example": "/api/csv/Aramus"
+            }
+          ]
+        },
+        {
+          "description": null,
+          "name": "delete",
+          "metadata": {
+          },
+          "params": {
+            "required": true,
+            "options": {
+              "reference": "V1::MediaTypes::Hello"
+            },
+            "type": {
+              "name": "Struct",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "Symbol",
+                  "family": "string",
+                  "id": "Attributor-Symbol"
+                }
+              },
+              "attributes": {
+                "id": {
+                  "required": true,
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "Aramus",
+                  "source": "url"
+                }
+              },
+              "requirements": [
+                {
+                  "type": "all",
+                  "attributes": [
+                    "id"
+                  ]
+                }
+              ]
+            },
+            "example": ""
+          },
+          "responses": {
+            "ok": {
+              "description": "Standard response for successful HTTP requests.",
+              "status": 200,
+              "headers": {
+              },
+              "payload": {
+                "name": "V1::MediaTypes::Hello",
+                "family": "hash",
+                "id": "V1-MediaTypes-Hello",
+                "key": {
+                  "type": {
+                    "name": "Symbol",
+                    "family": "string",
+                    "id": "Attributor-Symbol"
+                  }
+                },
+                "examples": {
+                  "json": {
+                    "content_type": "application/json",
+                    "body": "{\n  \"string\": \"peroxidate\"\n}"
+                  }
+                }
+              }
+            },
+            "no_content": {
+              "description": "The server successfully processed the request, but is not returning any content.",
+              "status": 204,
+              "headers": {
+              }
+            }
+          },
+          "urls": [
+            {
+              "verb": "DELETE",
+              "path": "/api/csv/:id",
+              "version": "1.0",
+              "example": "/api/csv/Aramus"
+            }
+          ]
+        }
+      ],
+      "name": "V1::ApiResources::CSVAPI",
+      "display_name": "CSVAPI",
+      "metadata": {
+      },
+      "traits": [
+
+      ]
+    },
+    "V1-ApiResources-Hello": {
+      "description": null,
+      "media_type": {
+        "name": "V1::MediaTypes::Hello",
+        "family": "hash",
+        "id": "V1-MediaTypes-Hello",
+        "key": {
+          "type": {
+            "name": "Symbol",
+            "family": "string",
+            "id": "Attributor-Symbol"
+          }
+        }
+      },
+      "actions": [
+        {
+          "description": null,
+          "name": "index",
+          "metadata": {
+          },
+          "headers": {
+            "required": true,
+            "options": {
+              "allow_extra": false,
+              "case_insensitive_load": true,
+              "reference": "V1::MediaTypes::Hello"
+            },
+            "type": {
+              "name": "Hash",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "String",
+                  "family": "string",
+                  "id": "Attributor-String"
+                }
+              },
+              "attributes": {
+                "Authorization": {
+                  "required": false,
+                  "options": {
+                    "regexp": "(?-mix:^.*Bearer )"
+                  },
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "Failed to generate example for /^.*Bearer / : Sorry, \".*\" is too vague, try setting a range: \".{0,3}\""
+                }
+              },
+              "requirements": [
+
+              ]
+            },
+            "example": {
+            }
+          },
+          "responses": {
+            "ok": {
+              "description": "Standard response for successful HTTP requests.",
+              "status": 200,
+              "headers": {
+              },
+              "payload": {
+                "name": "V1::MediaTypes::Hello",
+                "family": "hash",
+                "id": "V1-MediaTypes-Hello",
+                "key": {
+                  "type": {
+                    "name": "Symbol",
+                    "family": "string",
+                    "id": "Attributor-Symbol"
+                  }
+                },
+                "examples": {
+                  "json": {
+                    "content_type": "application/json",
+                    "body": "{\n  \"string\": \"pelage\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "traits": [
+            "authorized"
+          ],
+          "urls": [
+            {
+              "verb": "GET",
+              "path": "/api/hello",
+              "version": "1.0",
+              "example": "/api/hello"
+            }
+          ]
+        },
+        {
+          "description": null,
+          "name": "show",
+          "metadata": {
+          },
+          "headers": {
+            "required": true,
+            "options": {
+              "allow_extra": false,
+              "case_insensitive_load": true,
+              "reference": "V1::MediaTypes::Hello"
+            },
+            "type": {
+              "name": "Hash",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "String",
+                  "family": "string",
+                  "id": "Attributor-String"
+                }
+              },
+              "attributes": {
+                "Authorization": {
+                  "required": false,
+                  "options": {
+                    "regexp": "(?-mix:^.*Bearer )"
+                  },
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "Failed to generate example for /^.*Bearer / : Sorry, \".*\" is too vague, try setting a range: \".{0,3}\""
+                }
+              },
+              "requirements": [
+
+              ]
+            },
+            "example": {
+            }
+          },
+          "params": {
+            "required": true,
+            "options": {
+              "reference": "V1::MediaTypes::Hello"
+            },
+            "type": {
+              "name": "Struct",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "Symbol",
+                  "family": "string",
+                  "id": "Attributor-Symbol"
+                }
+              },
+              "attributes": {
+                "id": {
+                  "required": true,
+                  "options": {
+                    "min": 0
+                  },
+                  "type": {
+                    "name": "Integer",
+                    "family": "numeric",
+                    "id": "Attributor-Integer"
+                  },
+                  "example": 194,
+                  "source": "url"
+                }
+              },
+              "requirements": [
+                {
+                  "type": "all",
+                  "attributes": [
+                    "id"
+                  ]
+                }
+              ]
+            },
+            "example": ""
+          },
+          "responses": {
+            "ok": {
+              "description": "Standard response for successful HTTP requests.",
+              "status": 200,
+              "headers": {
+              },
+              "payload": {
+                "name": "V1::MediaTypes::Hello",
+                "family": "hash",
+                "id": "V1-MediaTypes-Hello",
+                "key": {
+                  "type": {
+                    "name": "Symbol",
+                    "family": "string",
+                    "id": "Attributor-Symbol"
+                  }
+                },
+                "examples": {
+                  "json": {
+                    "content_type": "application/json",
+                    "body": "{\n  \"string\": \"pelage\"\n}"
+                  }
+                }
+              }
+            },
+            "not_found": {
+              "description": "The requested resource could not be found but may be available again in the future.",
+              "status": 404,
+              "headers": {
+              }
+            }
+          },
+          "traits": [
+            "authorized"
+          ],
+          "urls": [
+            {
+              "verb": "GET",
+              "path": "/api/hello/:id",
+              "version": "1.0",
+              "example": "/api/hello/194"
+            }
+          ]
+        }
+      ],
+      "name": "V1::ApiResources::Hello",
+      "display_name": "Hello",
+      "metadata": {
+      },
+      "traits": [
+        "authorized"
+      ]
+    },
+    "V1-ApiResources-Mail": {
+      "description": null,
+      "media_type": {
+        "name": "V1::MediaTypes::Mail",
+        "family": "hash",
+        "id": "V1-MediaTypes-Mail",
+        "key": {
+          "type": {
+            "name": "Symbol",
+            "family": "string",
+            "id": "Attributor-Symbol"
+          }
+        }
+      },
+      "actions": [
+        {
+          "description": null,
+          "name": "index",
+          "metadata": {
+          },
+          "headers": {
+            "required": true,
+            "options": {
+              "allow_extra": false,
+              "case_insensitive_load": true,
+              "reference": "V1::MediaTypes::Mail"
+            },
+            "type": {
+              "name": "Hash",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "String",
+                  "family": "string",
+                  "id": "Attributor-String"
+                }
+              },
+              "attributes": {
+                "Authorization": {
+                  "required": false,
+                  "options": {
+                    "regexp": "(?-mix:^.*Bearer )"
+                  },
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "Failed to generate example for /^.*Bearer / : Sorry, \".*\" is too vague, try setting a range: \".{0,3}\""
+                }
+              },
+              "requirements": [
+
+              ]
+            },
+            "example": {
+            }
+          },
+          "responses": {
+            "ok": {
+              "description": "Standard response for successful HTTP requests.",
+              "status": 200,
+              "headers": {
+              },
+              "payload": {
+                "name": "V1::MediaTypes::Mail",
+                "family": "hash",
+                "id": "V1-MediaTypes-Mail",
+                "key": {
+                  "type": {
+                    "name": "Symbol",
+                    "family": "string",
+                    "id": "Attributor-Symbol"
+                  }
+                },
+                "examples": {
+                  "json": {
+                    "content_type": "application/json",
+                    "body": "{\n  \"string\": \"nitpicker\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "traits": [
+            "authorized"
+          ],
+          "urls": [
+            {
+              "verb": "GET",
+              "path": "/api/mail",
+              "version": "1.0",
+              "example": "/api/mail"
+            }
+          ]
+        },
+        {
+          "description": null,
+          "name": "show",
+          "metadata": {
+          },
+          "headers": {
+            "required": true,
+            "options": {
+              "allow_extra": false,
+              "case_insensitive_load": true,
+              "reference": "V1::MediaTypes::Mail"
+            },
+            "type": {
+              "name": "Hash",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "String",
+                  "family": "string",
+                  "id": "Attributor-String"
+                }
+              },
+              "attributes": {
+                "Authorization": {
+                  "required": false,
+                  "options": {
+                    "regexp": "(?-mix:^.*Bearer )"
+                  },
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "Failed to generate example for /^.*Bearer / : Sorry, \".*\" is too vague, try setting a range: \".{0,3}\""
+                }
+              },
+              "requirements": [
+
+              ]
+            },
+            "example": {
+            }
+          },
+          "params": {
+            "required": true,
+            "options": {
+              "reference": "V1::MediaTypes::Mail"
+            },
+            "type": {
+              "name": "Struct",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "Symbol",
+                  "family": "string",
+                  "id": "Attributor-Symbol"
+                }
+              },
+              "attributes": {
+                "id": {
+                  "required": true,
+                  "options": {
+                    "min": 0
+                  },
+                  "type": {
+                    "name": "Integer",
+                    "family": "numeric",
+                    "id": "Attributor-Integer"
+                  },
+                  "example": 107,
+                  "source": "url"
+                }
+              },
+              "requirements": [
+                {
+                  "type": "all",
+                  "attributes": [
+                    "id"
+                  ]
+                }
+              ]
+            },
+            "example": ""
+          },
+          "responses": {
+            "ok": {
+              "description": "Standard response for successful HTTP requests.",
+              "status": 200,
+              "headers": {
+              },
+              "payload": {
+                "name": "V1::MediaTypes::Mail",
+                "family": "hash",
+                "id": "V1-MediaTypes-Mail",
+                "key": {
+                  "type": {
+                    "name": "Symbol",
+                    "family": "string",
+                    "id": "Attributor-Symbol"
+                  }
+                },
+                "examples": {
+                  "json": {
+                    "content_type": "application/json",
+                    "body": "{\n  \"string\": \"nitpicker\"\n}"
+                  }
+                }
+              }
+            },
+            "not_found": {
+              "description": "The requested resource could not be found but may be available again in the future.",
+              "status": 404,
+              "headers": {
+              }
+            }
+          },
+          "traits": [
+            "authorized"
+          ],
+          "urls": [
+            {
+              "verb": "GET",
+              "path": "/api/mail/:id",
+              "version": "1.0",
+              "example": "/api/mail/107"
+            }
+          ]
+        },
+        {
+          "description": null,
+          "name": "create",
+          "metadata": {
+          },
+          "headers": {
+            "required": true,
+            "options": {
+              "allow_extra": false,
+              "case_insensitive_load": true,
+              "reference": "V1::MediaTypes::Mail"
+            },
+            "type": {
+              "name": "Hash",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "String",
+                  "family": "string",
+                  "id": "Attributor-String"
+                }
+              },
+              "attributes": {
+                "Authorization": {
+                  "required": false,
+                  "options": {
+                    "regexp": "(?-mix:^.*Bearer )"
+                  },
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "Failed to generate example for /^.*Bearer / : Sorry, \".*\" is too vague, try setting a range: \".{0,3}\""
+                }
+              },
+              "requirements": [
+
+              ]
+            },
+            "example": {
+            }
+          },
+          "payload": {
+            "required": true,
+            "options": {
+              "reference": "V1::MediaTypes::Mail"
+            },
+            "type": {
+              "name": "Struct",
+              "family": "hash",
+              "id": null,
+              "key": {
+                "type": {
+                  "name": "Symbol",
+                  "family": "string",
+                  "id": "Attributor-Symbol"
+                }
+              },
+              "attributes": {
+                "to": {
+                  "required": true,
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "semitrailers"
+                },
+                "from": {
+                  "required": true,
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "Zhitomir"
+                },
+                "subject": {
+                  "required": true,
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "subnotochordal"
+                },
+                "body": {
+                  "required": true,
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "lackeying"
+                },
+                "attachment": {
+                  "required": false,
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "acquainted"
+                },
+                "encoding": {
+                  "default": "text",
+                  "required": false,
+                  "type": {
+                    "name": "String",
+                    "family": "string",
+                    "id": "Attributor-String"
+                  },
+                  "example": "preilium"
+                },
+                "delete_attachment": {
+                  "default": true,
+                  "required": false,
+                  "type": {
+                    "name": "Boolean",
+                    "family": "boolean",
+                    "id": "Attributor-Boolean"
+                  },
+                  "example": true
+                }
+              },
+              "requirements": [
+                {
+                  "type": "all",
+                  "attributes": [
+                    "to",
+                    "from",
+                    "subject",
+                    "body"
+                  ]
+                }
+              ]
+            },
+            "examples": {
+              "json": {
+                "content_type": "application/json",
+                "body": "{\n  \"to\": \"semitrailers\",\n  \"from\": \"Zhitomir\",\n  \"subject\": \"subnotochordal\",\n  \"body\": \"lackeying\",\n  \"attachment\": \"acquainted\",\n  \"encoding\": \"preilium\",\n  \"delete_attachment\": true\n}"
+              },
+              "x-www-form-urlencoded": {
+                "content_type": "application/x-www-form-urlencoded",
+                "body": "to=semitrailers&from=Zhitomir&subject=subnotochordal&body=lackeying&attachment=acquainted&encoding=preilium&delete_attachment=true"
+              }
+            }
+          },
+          "responses": {
+            "ok": {
+              "description": "Standard response for successful HTTP requests.",
+              "status": 200,
+              "headers": {
+              },
+              "payload": {
+                "name": "V1::MediaTypes::Mail",
+                "family": "hash",
+                "id": "V1-MediaTypes-Mail",
+                "key": {
+                  "type": {
+                    "name": "Symbol",
+                    "family": "string",
+                    "id": "Attributor-Symbol"
+                  }
+                },
+                "examples": {
+                  "json": {
+                    "content_type": "application/json",
+                    "body": "{\n  \"string\": \"nitpicker\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "traits": [
+            "authorized"
+          ],
+          "urls": [
+            {
+              "verb": "POST",
+              "path": "/api/mail",
+              "version": "1.0",
+              "example": "/api/mail"
+            }
+          ]
+        }
+      ],
+      "name": "V1::ApiResources::Mail",
+      "display_name": "Mail",
+      "metadata": {
+      },
+      "traits": [
+        "authorized"
+      ]
+    }
+  },
+  "schemas": {
+    "V1-MediaTypes-Hello": {
+      "name": "V1::MediaTypes::Hello",
+      "family": "hash",
+      "id": "V1-MediaTypes-Hello",
+      "key": {
+        "type": {
+          "name": "Symbol",
+          "family": "string",
+          "id": "Attributor-Symbol"
+        }
+      },
+      "attributes": {
+        "string": {
+          "type": {
+            "name": "String",
+            "family": "string",
+            "id": "Attributor-String"
+          },
+          "example": "lupicide"
+        }
+      },
+      "requirements": [
+
+      ],
+      "views": {
+        "default": {
+          "attributes": {
+            "string": {
+            }
+          },
+          "type": "standard",
+          "example": {
+            "string": "lupicide"
+          }
+        }
+      },
+      "identifier": "application/json",
+      "description": null,
+      "display_name": "Hello",
+      "example": {
+        "string": "lupicide"
+      }
+    },
+    "V1-MediaTypes-Mail": {
+      "name": "V1::MediaTypes::Mail",
+      "family": "hash",
+      "id": "V1-MediaTypes-Mail",
+      "key": {
+        "type": {
+          "name": "Symbol",
+          "family": "string",
+          "id": "Attributor-Symbol"
+        }
+      },
+      "attributes": {
+        "string": {
+          "type": {
+            "name": "String",
+            "family": "string",
+            "id": "Attributor-String"
+          },
+          "example": "blot"
+        }
+      },
+      "requirements": [
+
+      ],
+      "views": {
+        "default": {
+          "attributes": {
+            "string": {
+            }
+          },
+          "type": "standard",
+          "example": {
+            "string": "blot"
+          }
+        }
+      },
+      "identifier": "application/json",
+      "description": null,
+      "display_name": "Mail",
+      "example": {
+        "string": "blot"
+      }
+    },
+    "Attributor-Collection": {
+      "name": "Collection",
+      "family": "array",
+      "id": "Attributor-Collection",
+      "options": {
+      },
+      "example": [
+        "An Object",
+        "An Object"
+      ],
+      "member_attribute": {
+        "type": {
+          "name": "Object",
+          "family": "any",
+          "id": "Attributor-Object"
+        },
+        "example": "An Object"
+      },
+      "display_name": "Collection"
+    }
+  },
+  "traits": {
+    "authorized": {
+      "description": null,
+      "headers": {
+        "Authorization": {
+          "required": false,
+          "options": {
+            "regexp": "(?-mix:^.*Bearer )"
+          },
+          "type": {
+            "name": "String",
+            "family": "string",
+            "id": "Attributor-String"
+          }
+        }
+      }
+    }
+  }
+}
