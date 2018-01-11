@@ -41,6 +41,7 @@ http POST http://localhost:8888/api/mail X-Api-Version:1.0 to=john.doe@example.c
                                                            body='Attached is your policy report' attachment='5dea41ad-b0d6-45a7-8deb-458301a2ff5f.csv'
 ```
  
+ ```
 +---------+----------------+--------+--------------------------+--------+-------------------+------+---------+---------+
 |                                                        Routes                                                        |
 +---------+----------------+--------+--------------------------+--------+-------------------+------+---------+---------+
@@ -58,3 +59,4 @@ http POST http://localhost:8888/api/mail X-Api-Version:1.0 to=john.doe@example.c
 | 1.0     | /api/mail/:id  | GET    | V1::ApiResources::Mail   | show   | V1::Mail#show     |      | yes     |         |
 | 1.0     | /api/mail      | POST   | V1::ApiResources::Mail   | create | V1::Mail#create   |      | yes     |         |
 +---------+----------------+--------+--------------------------+--------+-------------------+------+---------+---------+
+```
