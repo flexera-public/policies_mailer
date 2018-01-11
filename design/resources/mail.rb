@@ -43,12 +43,12 @@ module V1
         end
 
         payload do
-          attribute :to, String, required: true, description: 'email to', example: 'john.doe@example.com'
-          attribute :from, String, required: true, description: 'mary.doe@example.com'
-          attribute :subject, String, required: true
-          attribute :body, String, required: true
-          attribute :attachment, String, required: false
-          attribute :encoding, String, required: false, default: 'text', values: ['text','html']
+          attribute :to, String, required: true, description: 'email to:', example: 'john.doe@example.com'
+          attribute :from, String, required: true, description: 'email from:', example: 'mary.doe@example.com'
+          attribute :subject, String, required: true, description: 'email subject'
+          attribute :body, String, required: true, description: 'content of the email'
+          attribute :attachment, String, required: false, description: 'file name to be attached', example: '6901f064-8077-4644-984b-a3ee258f57c3.csv'
+          attribute :encoding, String, required: false, default: 'text', values: ['text','html'], example: 'text'
           attribute :delete_attachment, Attributor::Boolean, required: false, default: true
         end
       end
