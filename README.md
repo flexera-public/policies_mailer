@@ -25,6 +25,9 @@
 #### Create
 ```
 http POST http://localhost:8888/api/csv X-Api-Version:1.0 data:=[[1,2,3]]
+```
+Response:
+```
 HTTP/1.1 200 OK
 Content-Length: 51
 Content-Type: application/json
@@ -37,6 +40,9 @@ Content-Type: application/json
 #### Update
 ```
 http PUT http://localhost:8888/api/csv/6901f064-8077-4644-984b-a3ee258f57c3.csv X-Api-Version:1.0 data:=[[4,5,6],[6,7,8]]
+```
+Response:
+```
 HTTP/1.1 200 OK
 Content-Length: 51
 Content-Type: application/json
@@ -46,9 +52,12 @@ Content-Type: application/json
 }
 ```
 
-### Delete
+#### Delete
 ```
 http DELETE http://localhost:8888/api/csv/6901f064-8077-4644-984b-a3ee258f57c3.csv X-Api-Version:1.0
+```
+Response:
+```
 HTTP/1.1 200 OK
 Content-Length: 0
 Content-Type: application/json
@@ -69,6 +78,9 @@ Content-Type: application/json
 ```
 http POST http://localhost:8888/api/mail X-Api-Version:1.0 to=john.doe@example.com from=policies@rightscale.com subject='Policy Report' \
                                                            body='Attached is your policy report' attachment='6901f064-8077-4644-984b-a3ee258f57c3.csv'
+```
+Response:
+```
 HTTP/1.1 200 OK
 Content-Length: 117
 Content-Type: application/json
