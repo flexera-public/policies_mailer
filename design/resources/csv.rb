@@ -49,11 +49,11 @@ module V1
         end
 
         params do
-          attribute :id, String, required: true
+          attribute :id, String, required: true, example: '6901f064-8077-4644-984b-a3ee258f57c3.csv'
         end
 
         payload do
-          attribute :data, Attributor::Collection, required: false
+          attribute :data, Attributor::Collection, required: true, example: [['column-a', 'column-b']]
         end
         response :created
       end
