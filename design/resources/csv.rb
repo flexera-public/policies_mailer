@@ -3,7 +3,7 @@ module V1
     class CSVAPI
       include Praxis::ResourceDefinition
 
-      media_type V1::MediaTypes::Hello
+      media_type V1::MediaTypes::CSVAPI
       version '1.0'
 
       prefix '/api/csv'
@@ -64,7 +64,7 @@ module V1
         end
 
         params do
-          attribute :id, String, required: true
+          attribute :id, String, required: true, example: '6901f064-8077-4644-984b-a3ee258f57c3.csv'
         end
         response :no_content
       end
