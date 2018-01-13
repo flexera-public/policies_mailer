@@ -216,11 +216,12 @@
           :attributes:
             :id:
               :required: true
+              :example_definition: 6901f064-8077-4644-984b-a3ee258f57c3.csv
               :type:
                 :name: String
                 :family: string
                 :id: Attributor-String
-              :example: Aramus
+              :example: 6901f064-8077-4644-984b-a3ee258f57c3.csv
               :source: url
           :requirements:
           - :type: :all
@@ -242,7 +243,11 @@
               :id: Attributor-Symbol
           :attributes:
             :data:
-              :required: false
+              :required: true
+              :example_definition:
+              - &2
+                - column-a
+                - column-b
               :type:
                 :name: Collection
                 :family: array
@@ -253,24 +258,28 @@
                     :name: Object
                     :family: any
                     :id: Attributor-Object
-                  :example: An Object
+                  :example: *2
               :example:
-              - An Object
-              - An Object
-          :requirements: []
+              - *2
+          :requirements:
+          - :type: :all
+            :attributes:
+            - :data
         :examples:
           json:
             :content_type: application/json
             :body: |-
               {
                 "data": [
-                  "An Object",
-                  "An Object"
+                  [
+                    "column-a",
+                    "column-b"
+                  ]
                 ]
               }
           x-www-form-urlencoded:
             :content_type: application/x-www-form-urlencoded
-            :body: data=An+Object&data=An+Object
+            :body: data=%5B%22column-a%22%2C+%22column-b%22%5D
       :responses:
         :ok:
           :description: Standard response for successful HTTP requests.
@@ -301,11 +310,11 @@
       - :verb: PUT
         :path: "/api/csv/:id"
         :version: '1.0'
-        :example: "/api/csv/Aramus"
+        :example: "/api/csv/6901f064-8077-4644-984b-a3ee258f57c3.csv"
       - :verb: PATCH
         :path: "/api/csv/:id"
         :version: '1.0'
-        :example: "/api/csv/Aramus"
+        :example: "/api/csv/6901f064-8077-4644-984b-a3ee258f57c3.csv"
     - :description: 
       :name: :delete
       :metadata: {}
@@ -405,7 +414,7 @@
             Authorization:
               :required: false
               :options:
-                :regexp: &2 !ruby/regexp /^.*Bearer /
+                :regexp: &3 !ruby/regexp /^.*Bearer /
               :type:
                 :name: String
                 :family: string
@@ -464,7 +473,7 @@
             Authorization:
               :required: false
               :options:
-                :regexp: *2
+                :regexp: *3
               :type:
                 :name: String
                 :family: string
@@ -778,7 +787,7 @@
       Authorization:
         :required: false
         :options:
-          :regexp: *2
+          :regexp: *3
         :type:
           :name: String
           :family: string
