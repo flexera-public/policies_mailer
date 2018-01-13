@@ -5,11 +5,11 @@
         identifier 'application/json'
 
         attributes do
-          attribute :file, String
+          attribute :file, String, example: '6901f064-8077-4644-984b-a3ee258f57c3.csv'
         end
 
         view :default do
-          attribute :file, example: '6901f064-8077-4644-984b-a3ee258f57c3.csv'
+          attribute :file
         end
       end
     end
