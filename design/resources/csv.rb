@@ -53,7 +53,7 @@ module V1
         end
 
         payload do
-          attribute :data, Attributor::Collection, required: true, example: [['column-a', 'column-b']]
+          attribute :data, Attributor::Collection, required: true, example: [['row-item-1', 'row-item-2']]
         end
         response :created
       end
