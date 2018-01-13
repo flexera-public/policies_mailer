@@ -55,7 +55,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"file\": \"Bramante\"\n}"
+                    "body": "{\n  \"file\": \"6901f064-8077-4644-984b-a3ee258f57c3.csv\"\n}"
                   }
                 }
               }
@@ -135,7 +135,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"file\": \"Bramante\"\n}"
+                    "body": "{\n  \"file\": \"6901f064-8077-4644-984b-a3ee258f57c3.csv\"\n}"
                   }
                 }
               }
@@ -247,7 +247,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"file\": \"Bramante\"\n}"
+                    "body": "{\n  \"file\": \"6901f064-8077-4644-984b-a3ee258f57c3.csv\"\n}"
                   }
                 }
               }
@@ -404,7 +404,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"file\": \"Bramante\"\n}"
+                    "body": "{\n  \"file\": \"6901f064-8077-4644-984b-a3ee258f57c3.csv\"\n}"
                   }
                 }
               }
@@ -496,7 +496,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"file\": \"Bramante\"\n}"
+                    "body": "{\n  \"file\": \"6901f064-8077-4644-984b-a3ee258f57c3.csv\"\n}"
                   }
                 }
               }
@@ -960,12 +960,13 @@
       },
       "attributes": {
         "file": {
+          "example_definition": "6901f064-8077-4644-984b-a3ee258f57c3.csv",
           "type": {
             "name": "String",
             "family": "string",
             "id": "Attributor-String"
           },
-          "example": "adamantoblastoma"
+          "example": "6901f064-8077-4644-984b-a3ee258f57c3.csv"
         }
       },
       "requirements": [
@@ -979,7 +980,7 @@
           },
           "type": "standard",
           "example": {
-            "file": "adamantoblastoma"
+            "file": "6901f064-8077-4644-984b-a3ee258f57c3.csv"
           }
         }
       },
@@ -987,7 +988,7 @@
       "description": null,
       "display_name": "CSVAPI",
       "example": {
-        "file": "adamantoblastoma"
+        "file": "6901f064-8077-4644-984b-a3ee258f57c3.csv"
       }
     },
     "V1-MediaTypes-Hello": {

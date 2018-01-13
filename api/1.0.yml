@@ -45,7 +45,7 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "file": "Bramante"
+                    "file": "6901f064-8077-4644-984b-a3ee258f57c3.csv"
                   }
       :urls:
       - :verb: GET
@@ -102,7 +102,7 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "file": "Bramante"
+                    "file": "6901f064-8077-4644-984b-a3ee258f57c3.csv"
                   }
         :not_found:
           :description: The requested resource could not be found but may be available
@@ -185,7 +185,7 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "file": "Bramante"
+                    "file": "6901f064-8077-4644-984b-a3ee258f57c3.csv"
                   }
         :created:
           :description: The request has been fulfilled and resulted in a new resource
@@ -299,7 +299,7 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "file": "Bramante"
+                    "file": "6901f064-8077-4644-984b-a3ee258f57c3.csv"
                   }
         :created:
           :description: The request has been fulfilled and resulted in a new resource
@@ -365,7 +365,7 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "file": "Bramante"
+                    "file": "6901f064-8077-4644-984b-a3ee258f57c3.csv"
                   }
         :no_content:
           :description: The server successfully processed the request, but is not
@@ -708,11 +708,12 @@
         :id: Attributor-Symbol
     :attributes:
       :file:
+        :example_definition: 6901f064-8077-4644-984b-a3ee258f57c3.csv
         :type:
           :name: String
           :family: string
           :id: Attributor-String
-        :example: adamantoblastoma
+        :example: 6901f064-8077-4644-984b-a3ee258f57c3.csv
     :requirements: []
     :views:
       :default:
@@ -720,12 +721,12 @@
           :file: {}
         :type: :standard
         :example:
-          :file: adamantoblastoma
+          :file: 6901f064-8077-4644-984b-a3ee258f57c3.csv
     :identifier: application/json
     :description: 
     :display_name: CSVAPI
     :example:
-      :file: adamantoblastoma
+      :file: 6901f064-8077-4644-984b-a3ee258f57c3.csv
   V1-MediaTypes-Hello:
     :name: V1::MediaTypes::Hello
     :family: hash
