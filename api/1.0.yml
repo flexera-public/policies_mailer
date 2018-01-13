@@ -14,9 +14,9 @@
   V1-ApiResources-CSVAPI:
     :description: 
     :media_type:
-      :name: V1::MediaTypes::Hello
+      :name: V1::MediaTypes::CSVAPI
       :family: hash
-      :id: V1-MediaTypes-Hello
+      :id: V1-MediaTypes-CSVAPI
       :key:
         :type:
           :name: Symbol
@@ -32,9 +32,9 @@
           :status: 200
           :headers: {}
           :payload:
-            :name: V1::MediaTypes::Hello
+            :name: V1::MediaTypes::CSVAPI
             :family: hash
-            :id: V1-MediaTypes-Hello
+            :id: V1-MediaTypes-CSVAPI
             :key:
               :type:
                 :name: Symbol
@@ -45,7 +45,7 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "string": "peroxidate"
+                    "file": "Bramante"
                   }
       :urls:
       - :verb: GET
@@ -58,7 +58,7 @@
       :params:
         :required: true
         :options:
-          :reference: V1::MediaTypes::Hello
+          :reference: V1::MediaTypes::CSVAPI
         :type:
           :name: Struct
           :family: hash
@@ -89,9 +89,9 @@
           :status: 200
           :headers: {}
           :payload:
-            :name: V1::MediaTypes::Hello
+            :name: V1::MediaTypes::CSVAPI
             :family: hash
-            :id: V1-MediaTypes-Hello
+            :id: V1-MediaTypes-CSVAPI
             :key:
               :type:
                 :name: Symbol
@@ -102,7 +102,7 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "string": "peroxidate"
+                    "file": "Bramante"
                   }
         :not_found:
           :description: The requested resource could not be found but may be available
@@ -120,7 +120,7 @@
       :payload:
         :required: true
         :options:
-          :reference: V1::MediaTypes::Hello
+          :reference: V1::MediaTypes::CSVAPI
         :type:
           :name: Struct
           :family: hash
@@ -172,9 +172,9 @@
           :status: 200
           :headers: {}
           :payload:
-            :name: V1::MediaTypes::Hello
+            :name: V1::MediaTypes::CSVAPI
             :family: hash
-            :id: V1-MediaTypes-Hello
+            :id: V1-MediaTypes-CSVAPI
             :key:
               :type:
                 :name: Symbol
@@ -185,7 +185,7 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "string": "peroxidate"
+                    "file": "Bramante"
                   }
         :created:
           :description: The request has been fulfilled and resulted in a new resource
@@ -203,7 +203,7 @@
       :params:
         :required: true
         :options:
-          :reference: V1::MediaTypes::Hello
+          :reference: V1::MediaTypes::CSVAPI
         :type:
           :name: Struct
           :family: hash
@@ -231,7 +231,7 @@
       :payload:
         :required: true
         :options:
-          :reference: V1::MediaTypes::Hello
+          :reference: V1::MediaTypes::CSVAPI
         :type:
           :name: Struct
           :family: hash
@@ -286,9 +286,9 @@
           :status: 200
           :headers: {}
           :payload:
-            :name: V1::MediaTypes::Hello
+            :name: V1::MediaTypes::CSVAPI
             :family: hash
-            :id: V1-MediaTypes-Hello
+            :id: V1-MediaTypes-CSVAPI
             :key:
               :type:
                 :name: Symbol
@@ -299,7 +299,7 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "string": "peroxidate"
+                    "file": "Bramante"
                   }
         :created:
           :description: The request has been fulfilled and resulted in a new resource
@@ -321,7 +321,7 @@
       :params:
         :required: true
         :options:
-          :reference: V1::MediaTypes::Hello
+          :reference: V1::MediaTypes::CSVAPI
         :type:
           :name: Struct
           :family: hash
@@ -334,11 +334,12 @@
           :attributes:
             :id:
               :required: true
+              :example_definition: 6901f064-8077-4644-984b-a3ee258f57c3.csv
               :type:
                 :name: String
                 :family: string
                 :id: Attributor-String
-              :example: Aramus
+              :example: 6901f064-8077-4644-984b-a3ee258f57c3.csv
               :source: url
           :requirements:
           - :type: :all
@@ -351,9 +352,9 @@
           :status: 200
           :headers: {}
           :payload:
-            :name: V1::MediaTypes::Hello
+            :name: V1::MediaTypes::CSVAPI
             :family: hash
-            :id: V1-MediaTypes-Hello
+            :id: V1-MediaTypes-CSVAPI
             :key:
               :type:
                 :name: Symbol
@@ -364,7 +365,7 @@
                 :content_type: application/json
                 :body: |-
                   {
-                    "string": "peroxidate"
+                    "file": "Bramante"
                   }
         :no_content:
           :description: The server successfully processed the request, but is not
@@ -375,7 +376,7 @@
       - :verb: DELETE
         :path: "/api/csv/:id"
         :version: '1.0'
-        :example: "/api/csv/Aramus"
+        :example: "/api/csv/6901f064-8077-4644-984b-a3ee258f57c3.csv"
     :name: V1::ApiResources::CSVAPI
     :display_name: CSVAPI
     :metadata: {}
@@ -696,6 +697,35 @@
     :metadata: {}
     :traits: []
 :schemas:
+  V1-MediaTypes-CSVAPI:
+    :name: V1::MediaTypes::CSVAPI
+    :family: hash
+    :id: V1-MediaTypes-CSVAPI
+    :key:
+      :type:
+        :name: Symbol
+        :family: string
+        :id: Attributor-Symbol
+    :attributes:
+      :file:
+        :type:
+          :name: String
+          :family: string
+          :id: Attributor-String
+        :example: adamantoblastoma
+    :requirements: []
+    :views:
+      :default:
+        :attributes:
+          :file: {}
+        :type: :standard
+        :example:
+          :file: adamantoblastoma
+    :identifier: application/json
+    :description: 
+    :display_name: CSVAPI
+    :example:
+      :file: adamantoblastoma
   V1-MediaTypes-Hello:
     :name: V1::MediaTypes::Hello
     :family: hash

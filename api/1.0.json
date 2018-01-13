@@ -18,9 +18,9 @@
     "V1-ApiResources-CSVAPI": {
       "description": null,
       "media_type": {
-        "name": "V1::MediaTypes::Hello",
+        "name": "V1::MediaTypes::CSVAPI",
         "family": "hash",
-        "id": "V1-MediaTypes-Hello",
+        "id": "V1-MediaTypes-CSVAPI",
         "key": {
           "type": {
             "name": "Symbol",
@@ -42,9 +42,9 @@
               "headers": {
               },
               "payload": {
-                "name": "V1::MediaTypes::Hello",
+                "name": "V1::MediaTypes::CSVAPI",
                 "family": "hash",
-                "id": "V1-MediaTypes-Hello",
+                "id": "V1-MediaTypes-CSVAPI",
                 "key": {
                   "type": {
                     "name": "Symbol",
@@ -55,7 +55,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"string\": \"peroxidate\"\n}"
+                    "body": "{\n  \"file\": \"Bramante\"\n}"
                   }
                 }
               }
@@ -78,7 +78,7 @@
           "params": {
             "required": true,
             "options": {
-              "reference": "V1::MediaTypes::Hello"
+              "reference": "V1::MediaTypes::CSVAPI"
             },
             "type": {
               "name": "Struct",
@@ -122,9 +122,9 @@
               "headers": {
               },
               "payload": {
-                "name": "V1::MediaTypes::Hello",
+                "name": "V1::MediaTypes::CSVAPI",
                 "family": "hash",
-                "id": "V1-MediaTypes-Hello",
+                "id": "V1-MediaTypes-CSVAPI",
                 "key": {
                   "type": {
                     "name": "Symbol",
@@ -135,7 +135,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"string\": \"peroxidate\"\n}"
+                    "body": "{\n  \"file\": \"Bramante\"\n}"
                   }
                 }
               }
@@ -164,7 +164,7 @@
           "payload": {
             "required": true,
             "options": {
-              "reference": "V1::MediaTypes::Hello"
+              "reference": "V1::MediaTypes::CSVAPI"
             },
             "type": {
               "name": "Struct",
@@ -234,9 +234,9 @@
               "headers": {
               },
               "payload": {
-                "name": "V1::MediaTypes::Hello",
+                "name": "V1::MediaTypes::CSVAPI",
                 "family": "hash",
-                "id": "V1-MediaTypes-Hello",
+                "id": "V1-MediaTypes-CSVAPI",
                 "key": {
                   "type": {
                     "name": "Symbol",
@@ -247,7 +247,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"string\": \"peroxidate\"\n}"
+                    "body": "{\n  \"file\": \"Bramante\"\n}"
                   }
                 }
               }
@@ -276,7 +276,7 @@
           "params": {
             "required": true,
             "options": {
-              "reference": "V1::MediaTypes::Hello"
+              "reference": "V1::MediaTypes::CSVAPI"
             },
             "type": {
               "name": "Struct",
@@ -316,7 +316,7 @@
           "payload": {
             "required": true,
             "options": {
-              "reference": "V1::MediaTypes::Hello"
+              "reference": "V1::MediaTypes::CSVAPI"
             },
             "type": {
               "name": "Struct",
@@ -391,9 +391,9 @@
               "headers": {
               },
               "payload": {
-                "name": "V1::MediaTypes::Hello",
+                "name": "V1::MediaTypes::CSVAPI",
                 "family": "hash",
-                "id": "V1-MediaTypes-Hello",
+                "id": "V1-MediaTypes-CSVAPI",
                 "key": {
                   "type": {
                     "name": "Symbol",
@@ -404,7 +404,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"string\": \"peroxidate\"\n}"
+                    "body": "{\n  \"file\": \"Bramante\"\n}"
                   }
                 }
               }
@@ -439,7 +439,7 @@
           "params": {
             "required": true,
             "options": {
-              "reference": "V1::MediaTypes::Hello"
+              "reference": "V1::MediaTypes::CSVAPI"
             },
             "type": {
               "name": "Struct",
@@ -455,12 +455,13 @@
               "attributes": {
                 "id": {
                   "required": true,
+                  "example_definition": "6901f064-8077-4644-984b-a3ee258f57c3.csv",
                   "type": {
                     "name": "String",
                     "family": "string",
                     "id": "Attributor-String"
                   },
-                  "example": "Aramus",
+                  "example": "6901f064-8077-4644-984b-a3ee258f57c3.csv",
                   "source": "url"
                 }
               },
@@ -482,9 +483,9 @@
               "headers": {
               },
               "payload": {
-                "name": "V1::MediaTypes::Hello",
+                "name": "V1::MediaTypes::CSVAPI",
                 "family": "hash",
-                "id": "V1-MediaTypes-Hello",
+                "id": "V1-MediaTypes-CSVAPI",
                 "key": {
                   "type": {
                     "name": "Symbol",
@@ -495,7 +496,7 @@
                 "examples": {
                   "json": {
                     "content_type": "application/json",
-                    "body": "{\n  \"string\": \"peroxidate\"\n}"
+                    "body": "{\n  \"file\": \"Bramante\"\n}"
                   }
                 }
               }
@@ -512,7 +513,7 @@
               "verb": "DELETE",
               "path": "/api/csv/:id",
               "version": "1.0",
-              "example": "/api/csv/Aramus"
+              "example": "/api/csv/6901f064-8077-4644-984b-a3ee258f57c3.csv"
             }
           ]
         }
@@ -946,6 +947,49 @@
     }
   },
   "schemas": {
+    "V1-MediaTypes-CSVAPI": {
+      "name": "V1::MediaTypes::CSVAPI",
+      "family": "hash",
+      "id": "V1-MediaTypes-CSVAPI",
+      "key": {
+        "type": {
+          "name": "Symbol",
+          "family": "string",
+          "id": "Attributor-Symbol"
+        }
+      },
+      "attributes": {
+        "file": {
+          "type": {
+            "name": "String",
+            "family": "string",
+            "id": "Attributor-String"
+          },
+          "example": "adamantoblastoma"
+        }
+      },
+      "requirements": [
+
+      ],
+      "views": {
+        "default": {
+          "attributes": {
+            "file": {
+            }
+          },
+          "type": "standard",
+          "example": {
+            "file": "adamantoblastoma"
+          }
+        }
+      },
+      "identifier": "application/json",
+      "description": null,
+      "display_name": "CSVAPI",
+      "example": {
+        "file": "adamantoblastoma"
+      }
+    },
     "V1-MediaTypes-Hello": {
       "name": "V1::MediaTypes::Hello",
       "family": "hash",
