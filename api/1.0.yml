@@ -71,11 +71,12 @@
           :attributes:
             :id:
               :required: true
+              :example_definition: 6901f064-8077-4644-984b-a3ee258f57c3.csv
               :type:
                 :name: String
                 :family: string
                 :id: Attributor-String
-              :example: Aramus
+              :example: 6901f064-8077-4644-984b-a3ee258f57c3.csv
               :source: url
           :requirements:
           - :type: :all
@@ -112,7 +113,7 @@
       - :verb: GET
         :path: "/api/csv/:id"
         :version: '1.0'
-        :example: "/api/csv/Aramus"
+        :example: "/api/csv/6901f064-8077-4644-984b-a3ee258f57c3.csv"
     - :description: 
       :name: :create
       :metadata: {}
@@ -132,6 +133,10 @@
           :attributes:
             :data:
               :required: false
+              :example_definition:
+              - &1
+                - column-a
+                - column-b
               :type:
                 :name: Collection
                 :family: array
@@ -142,10 +147,9 @@
                     :name: Object
                     :family: any
                     :id: Attributor-Object
-                  :example: An Object
+                  :example: *1
               :example:
-              - An Object
-              - An Object
+              - *1
           :requirements: []
         :examples:
           json:
@@ -153,13 +157,15 @@
             :body: |-
               {
                 "data": [
-                  "An Object",
-                  "An Object"
+                  [
+                    "column-a",
+                    "column-b"
+                  ]
                 ]
               }
           x-www-form-urlencoded:
             :content_type: application/x-www-form-urlencoded
-            :body: data=An+Object&data=An+Object
+            :body: data=%5B%22column-a%22%2C+%22column-b%22%5D
       :responses:
         :ok:
           :description: Standard response for successful HTTP requests.
@@ -399,7 +405,7 @@
             Authorization:
               :required: false
               :options:
-                :regexp: &1 !ruby/regexp /^.*Bearer /
+                :regexp: &2 !ruby/regexp /^.*Bearer /
               :type:
                 :name: String
                 :family: string
@@ -458,7 +464,7 @@
             Authorization:
               :required: false
               :options:
-                :regexp: *1
+                :regexp: *2
               :type:
                 :name: String
                 :family: string
@@ -772,7 +778,7 @@
       Authorization:
         :required: false
         :options:
-          :regexp: *1
+          :regexp: *2
         :type:
           :name: String
           :family: string
