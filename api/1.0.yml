@@ -246,8 +246,8 @@
               :required: true
               :example_definition:
               - &2
-                - column-a
-                - column-b
+                - row-item-1
+                - row-item-2
               :type:
                 :name: Collection
                 :family: array
@@ -272,14 +272,14 @@
               {
                 "data": [
                   [
-                    "column-a",
-                    "column-b"
+                    "row-item-1",
+                    "row-item-2"
                   ]
                 ]
               }
           x-www-form-urlencoded:
             :content_type: application/x-www-form-urlencoded
-            :body: data=%5B%22column-a%22%2C+%22column-b%22%5D
+            :body: data=%5B%22row-item-1%22%2C+%22row-item-2%22%5D
       :responses:
         :ok:
           :description: Standard response for successful HTTP requests.

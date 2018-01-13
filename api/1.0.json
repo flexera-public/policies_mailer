@@ -334,8 +334,8 @@
                   "required": true,
                   "example_definition": [
                     [
-                      "column-a",
-                      "column-b"
+                      "row-item-1",
+                      "row-item-2"
                     ]
                   ],
                   "type": {
@@ -351,15 +351,15 @@
                         "id": "Attributor-Object"
                       },
                       "example": [
-                        "column-a",
-                        "column-b"
+                        "row-item-1",
+                        "row-item-2"
                       ]
                     }
                   },
                   "example": [
                     [
-                      "column-a",
-                      "column-b"
+                      "row-item-1",
+                      "row-item-2"
                     ]
                   ]
                 }
@@ -376,11 +376,11 @@
             "examples": {
               "json": {
                 "content_type": "application/json",
-                "body": "{\n  \"data\": [\n    [\n      \"column-a\",\n      \"column-b\"\n    ]\n  ]\n}"
+                "body": "{\n  \"data\": [\n    [\n      \"row-item-1\",\n      \"row-item-2\"\n    ]\n  ]\n}"
               },
               "x-www-form-urlencoded": {
                 "content_type": "application/x-www-form-urlencoded",
-                "body": "data=%5B%22column-a%22%2C+%22column-b%22%5D"
+                "body": "data=%5B%22row-item-1%22%2C+%22row-item-2%22%5D"
               }
             }
           },
