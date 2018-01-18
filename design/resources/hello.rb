@@ -4,12 +4,13 @@ module V1
       include Praxis::ResourceDefinition
 
       media_type V1::MediaTypes::Hello
-      version '1.0'
+      #version '1.0'
+      version 'n/a'
 
       prefix '/api/hello'
 
       # Will apply to all actions of this resource
-      trait :authorized
+      #trait :authorized
 
       action_defaults do
         response :ok
