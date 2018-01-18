@@ -1,0 +1,163 @@
+---
+:info:
+  :schema_version: '1.0'
+  :base_path: ''
+  :version_with:
+  - :header
+  - :params
+  :consumes:
+  - json
+  - x-www-form-urlencoded
+  :produces:
+  - json
+:resources:
+  V1-ApiResources-Hello:
+    :description: 
+    :media_type:
+      :name: V1::MediaTypes::Hello
+      :family: hash
+      :id: V1-MediaTypes-Hello
+      :key:
+        :type:
+          :name: Symbol
+          :family: string
+          :id: Attributor-Symbol
+    :actions:
+    - :description: 
+      :name: :index
+      :metadata: {}
+      :responses:
+        :ok:
+          :description: Standard response for successful HTTP requests.
+          :status: 200
+          :headers: {}
+          :payload:
+            :name: V1::MediaTypes::Hello
+            :family: hash
+            :id: V1-MediaTypes-Hello
+            :key:
+              :type:
+                :name: Symbol
+                :family: string
+                :id: Attributor-Symbol
+            :examples:
+              json:
+                :content_type: application/json
+                :body: |-
+                  {
+                    "string": "pelage"
+                  }
+      :urls:
+      - :verb: GET
+        :path: "/api/hello"
+        :version: n/a
+        :example: "/api/hello"
+    - :description: 
+      :name: :show
+      :metadata: {}
+      :params:
+        :required: true
+        :options:
+          :reference: V1::MediaTypes::Hello
+        :type:
+          :name: Struct
+          :family: hash
+          :id: 
+          :key:
+            :type:
+              :name: Symbol
+              :family: string
+              :id: Attributor-Symbol
+          :attributes:
+            :id:
+              :required: true
+              :options:
+                :min: 0
+              :type:
+                :name: Integer
+                :family: numeric
+                :id: Attributor-Integer
+              :example: 194
+              :source: url
+          :requirements:
+          - :type: :all
+            :attributes:
+            - :id
+        :example: ''
+      :responses:
+        :ok:
+          :description: Standard response for successful HTTP requests.
+          :status: 200
+          :headers: {}
+          :payload:
+            :name: V1::MediaTypes::Hello
+            :family: hash
+            :id: V1-MediaTypes-Hello
+            :key:
+              :type:
+                :name: Symbol
+                :family: string
+                :id: Attributor-Symbol
+            :examples:
+              json:
+                :content_type: application/json
+                :body: |-
+                  {
+                    "string": "pelage"
+                  }
+        :not_found:
+          :description: The requested resource could not be found but may be available
+            again in the future.
+          :status: 404
+          :headers: {}
+      :urls:
+      - :verb: GET
+        :path: "/api/hello/:id"
+        :version: n/a
+        :example: "/api/hello/194"
+    :name: V1::ApiResources::Hello
+    :display_name: Hello
+    :metadata: {}
+    :traits: []
+:schemas:
+  V1-MediaTypes-Hello:
+    :name: V1::MediaTypes::Hello
+    :family: hash
+    :id: V1-MediaTypes-Hello
+    :key:
+      :type:
+        :name: Symbol
+        :family: string
+        :id: Attributor-Symbol
+    :attributes:
+      :string:
+        :type:
+          :name: String
+          :family: string
+          :id: Attributor-String
+        :example: lupicide
+    :requirements: []
+    :views:
+      :default:
+        :attributes:
+          :string: {}
+        :type: :standard
+        :example:
+          :string: lupicide
+    :identifier: application/json
+    :description: 
+    :display_name: Hello
+    :example:
+      :string: lupicide
+:traits:
+  :authorized:
+    :description: 
+    :headers:
+      Authorization:
+        :required: false
+        :options:
+          :regexp: !ruby/regexp /^.*Bearer /
+        :type:
+          :name: String
+          :family: string
+          :id: Attributor-String
