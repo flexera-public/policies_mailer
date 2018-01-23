@@ -18,7 +18,7 @@ module V1
       mb_obj.add_recipient :to, payload[:to]
       mb_obj.subject payload[:subject]
       mb_obj.body_text payload[:body] if payload[:encoding] == 'text' || !payload[:encoding]
-      mb_obj.boxy_html payload[:body] if payload[:encoding] == 'html'
+      mb_obj.body_html payload[:body] if payload[:encoding] == 'html'
       if payload[:attachment]
         mb_obj.add_attachment File.join(TEMP_FILE_DIR,payload[:attachment])
         V1::CSVAPI.delete(payload[:attachment]) if payload[:delete_attachment]
