@@ -131,25 +131,9 @@ define launch_handler() do
   call send_mail($csv_file)
 end
 ```
-## Routes
- ```
-+---------+----------------+--------+--------------------------+--------+-------------------+------+---------+---------+
-|                                                        Routes                                                        |
-+---------+----------------+--------+--------------------------+--------+-------------------+------+---------+---------+
-| Version | Path           | Verb   | Resource                 | Action | Implementation    | Name | Primary | Options |
-+---------+----------------+--------+--------------------------+--------+-------------------+------+---------+---------+
-| 1.0     | /api/csv       | GET    | V1::ApiResources::CSVAPI | index  | V1::CSVAPI#index  |      | yes     |         |
-| 1.0     | /api/csv/:id   | GET    | V1::ApiResources::CSVAPI | show   | V1::CSVAPI#show   |      | yes     |         |
-| 1.0     | /api/csv       | POST   | V1::ApiResources::CSVAPI | create | V1::CSVAPI#create |      | yes     |         |
-| 1.0     | /api/csv/:id   | PUT    | V1::ApiResources::CSVAPI | update | V1::CSVAPI#update |      | yes     |         |
-| 1.0     | /api/csv/:id   | PATCH  | V1::ApiResources::CSVAPI | update | V1::CSVAPI#update |      |         |         |
-| 1.0     | /api/csv/:id   | DELETE | V1::ApiResources::CSVAPI | delete | V1::CSVAPI#delete |      | yes     |         |
-| 1.0     | /api/hello     | GET    | V1::ApiResources::Hello  | index  | V1::Hello#index   |      | yes     |         |
-| 1.0     | /api/hello/:id | GET    | V1::ApiResources::Hello  | show   | V1::Hello#show    |      | yes     |         |
-| 1.0     | /api/mail      | GET    | V1::ApiResources::Mail   | index  | V1::Mail#index    |      | yes     |         |
-| 1.0     | /api/mail/:id  | GET    | V1::ApiResources::Mail   | show   | V1::Mail#show     |      | yes     |         |
-| 1.0     | /api/mail      | POST   | V1::ApiResources::Mail   | create | V1::Mail#create   |      | yes     |         |
-+---------+----------------+--------+--------------------------+--------+-------------------+------+---------+---------+
+## Running Application
 ```
-
+docker build policies_mailer -t policies_mailer:poc
+docker run -d -p 80:8080 -e MAILGUN_DOMAIN='mail.example.com' -e MAILGUN_API_KEY='key-replace-me' sha_of_image
+```
 ## Additional API Docs: https://rs-services.github.io/policies_mailer/
