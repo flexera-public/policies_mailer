@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'praxis'
-gem 'rack', '~> 1.0'
+gem 'rack', '~> 1.6.11'
 gem 'rake'
 gem 'fastercsv'
 gem 'pry'
